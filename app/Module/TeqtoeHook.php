@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin API: teqtoeHook class
+ * Plugin API: TeqtoeHook class
  *
  */
 
@@ -10,7 +10,7 @@
  * @see Iterator
  * @see ArrayAccess
  */
-final class teqtoeHook implements Iterator, ArrayAccess {
+final class TeqtoeHook implements Iterator, ArrayAccess {
 
 	/**
 	 * Hook callbacks.
@@ -300,18 +300,18 @@ final class teqtoeHook implements Iterator, ArrayAccess {
 
     /**
      * @param $filters
-     * @return teqtoeHook[]
+     * @return TeqtoeHook[]
      */
 	public static function build_preinitialized_hooks( $filters ) {
-		/** @var teqtoeHook[] $normalized */
+		/** @var TeqtoeHook[] $normalized */
 		$normalized = array();
 
 		foreach ( $filters as $tag => $callback_groups ) {
-			if ( is_object( $callback_groups ) && $callback_groups instanceof teqtoeHook ) {
+			if ( is_object( $callback_groups ) && $callback_groups instanceof TeqtoeHook ) {
 				$normalized[ $tag ] = $callback_groups;
 				continue;
 			}
-			$hook = new teqtoeHook();
+			$hook = new TeqtoeHook();
 
 			// Loop through callback groups.
 			foreach ( $callback_groups as $priority => $callbacks ) {

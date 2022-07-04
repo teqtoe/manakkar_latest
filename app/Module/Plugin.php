@@ -1,13 +1,13 @@
 <?php
 
 // Initialize the filter globals.
-require( dirname( __FILE__ ) . '/teqtoeHook.php' );
+require( dirname( __FILE__ ) . '/TeqtoeHook.php' );
 
-/** @var teqtoeHook[] $teqtoe_filter */
+/** @var TeqtoeHook[] $teqtoe_filter */
 global $teqtoe_filter, $teqtoe_actions, $teqtoe_current_filter;
 
 if ( $teqtoe_filter ) {
-	$teqtoe_filter = teqtoeHook::build_preinitialized_hooks( $teqtoe_filter );
+	$teqtoe_filter = TeqtoeHook::build_preinitialized_hooks( $teqtoe_filter );
 } else {
 	$teqtoe_filter = array();
 }
@@ -30,7 +30,7 @@ if ( ! isset( $teqtoe_current_filter ) ) {
 function add_filter( $tag, $function_to_add, $priority = 10, $accepted_args = 1 ) {
 	global $teqtoe_filter;
 	if ( ! isset( $teqtoe_filter[ $tag ] ) ) {
-		$teqtoe_filter[ $tag ] = new teqtoeHook();
+		$teqtoe_filter[ $tag ] = new TeqtoeHook();
 	}
 	$teqtoe_filter[ $tag ]->add_filter( $tag, $function_to_add, $priority, $accepted_args );
 	return true;
@@ -78,7 +78,7 @@ function apply_filters( $tag, $value ) {
 		$teqtoe_current_filter[] = $tag;
 	}
 
-	// Don't pass the tag name to teqtoeHook.
+	// Don't pass the tag name to TeqtoeHook.
 	array_shift( $args );
 
 	$filtered = $teqtoe_filter[ $tag ]->apply_filters( $value, $args );

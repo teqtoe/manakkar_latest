@@ -1667,7 +1667,7 @@ if ( ! function_exists('cookie_message_html')) {
     function cookie_message_html(){
         //$msg = get_option('cookie_alert.message');
 
-        $msg = 'By using TeachifyLMS you accept our cookies and agree to our privacy policy, including cookie policy.';
+        $msg = 'By using Manakkar you accept our cookies and agree to our privacy policy, including cookie policy.';
 
         $link = "<a href='" . route('post_proxy', get_option('privacy_policy_page')) . "'>" . __t('read_privacy_policy') . "</a>";
         $msg = str_replace('{privacy_policy_url}', $link, $msg);

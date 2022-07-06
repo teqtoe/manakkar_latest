@@ -14,7 +14,7 @@
                         <p class="hero-subtitle  mb-4">
                             {!! __t('hero_subtitle') !!}
                         </p>
-                        <a href="{{route('categories')}}" class="btn btn-theme-primary btn-lg">Browse Course</a>
+                        
                     </div>
 
                 </div>

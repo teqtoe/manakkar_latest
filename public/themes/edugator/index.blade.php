@@ -139,29 +139,7 @@
     @endif
 
 
-    @if($new_courses->count())
-        <div class="home-section-wrap home-new-courses-wrapper py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-header-wrap">
-                            <h3 class="section-title">{{__t('new_arrival')}}
-
-                                <a href="{{route('courses')}}" class="btn btn-link float-right"><i class="la la-list"></i> {{__t('all_courses')}}</a>
-                            </h3>
-                            <p class="section-subtitle">{{__t('new_arrival_desc')}}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="popular-courses-cards-wrap mt-3">
-                    <div class="row">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
+    
 
     @if($posts->count())
     <div class="home-section-wrap home-blog-section-wrapper py-5">

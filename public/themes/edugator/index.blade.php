@@ -156,9 +156,7 @@
 
                 <div class="popular-courses-cards-wrap mt-3">
                     <div class="row">
-                        @foreach($new_courses as $course)
-                            {!! course_card($course) !!}
-                        @endforeach
+                        
                     </div>
                 </div>
             </div>

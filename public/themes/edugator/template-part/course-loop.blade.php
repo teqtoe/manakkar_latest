@@ -10,6 +10,14 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
                 <img src="{{$course->thumbnail_url}}" class="img-fluid" />
             </a>
 
+
+                <p class="category-name">
+                    @if($course->category)
+                        <span>
+                            <a href="{{route('category_view', $course->category->slug)}}">{{$course->category->category_name}}</a>
+                        </span>
+                    @endif
+                </p>
             <button class="course-card-add-wish btn btn-link btn-sm p-0" data-course-id="{{$course->id}}">
                 @if($auth_user && in_array($course->id, $auth_user->get_option('wishlists', []) ))
                     <i class="la la-heart"></i>
@@ -30,19 +38,12 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
                         <i class="la la-user"></i> by <a href="{{route('profile', $course->user_id)}}">{{$course->author->name}}</a>
                     </span>
                 </p>
-                <p class="category-name">
-                    @if($course->category)
-                        <span>
-                            <i class="la la-folder"></i> In <a href="{{route('category_view', $course->category->slug)}}">{{$course->category->category_name}}</a>
-                        </span>
-                    @endif
-                </p>
 
                 <p class="course-card-short-info mb-2 d-flex justify-content-between">
                     <span><i class="la la-play-circle"></i> {{$course->total_lectures}} {{__t('lectures')}}</span>
                     <span><i class="fa fa-signal"></i> {{course_levels($course->level)}}</span>
                 </p>
-                @if($course->rating_count)
+                <!-- @if($course->rating_count)
                     <div class="course-card-ratings">
                         <div class="star-ratings-group d-flex">
                             {!! star_rating_generator($course->rating_value) !!}
@@ -50,7 +51,7 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
                             <span class="text-muted star-ratings-count">({{$course->rating_count}})</span>
                         </div>
                     </div>
-                @endif
+                @endif -->
             </div>
 
             <div class="course-card-footer mt-3">

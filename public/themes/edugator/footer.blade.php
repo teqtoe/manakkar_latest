@@ -1,7 +1,7 @@
 
 <footer>
 
-    <div class="footer-top py-5">
+   <!--  <div class="footer-top py-5">
 
         <div class="container">
             <div class="row">
@@ -56,7 +56,7 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="footer-bottom py-5">
@@ -68,8 +68,8 @@
                     <div class="footer-bottom-contents-wrap d-flex">
 
                         <div class="footer-bottom-left d-flex">
-                            <h5 class="text-primary">teqtoe LMS</h5>
-                            <span class="ml-4">Copyright © 2020 teqtoe. All rights reserved.</span>
+                            <!-- <h5 class="text-primary">teqtoe LMS</h5> -->
+                            <span class="">Copyright © 2020 teqtoe. All rights reserved.</span>
                         </div>
 
                         <div class="footer-bottom-right flex-grow-1 text-right">

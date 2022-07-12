@@ -15,7 +15,7 @@
                             {!! __t('hero_subtitle') !!}
                         </p>
                         <div class="header-search-wrap my-2 my-lg-0  ml-2">
-                            <form action="{{route('courses')}}" class="form-inline cours-search" method="get">
+                            <form action="{{route('courses')}}" class=" cours-search" method="get">
                                 <div class="input-group">
                                     <input class="form-control" type="search" name="q" value="{{request('q')}}" placeholder="What do you want to learn today?">
                                     <div class="input-group-append">
@@ -23,6 +23,36 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                        <div class="home-course-stats-wrap pb-5 mb-2 text-center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="home-course-stats-wrap-box">
+                                            <p class="count">580+</p> 
+                                            <h5>Active Courses</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">                                        
+                                        <div class="home-course-stats-wrap-box">
+                                            <p class="count">1200+</p> 
+                                            <h5>Hours Video</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">                                        
+                                        <div class="home-course-stats-wrap-box">
+                                            <p class="count">850+</p> 
+                                            <h5>Teachers</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">                                        
+                                        <div class="home-course-stats-wrap-box">
+                                            <p class="count">1800+</p> 
+                                            <h5>Students Learning</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -85,20 +115,19 @@
         <div class="home-section-wrap home-featured-courses-wrapper py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-8">
                         <div class="section-header-wrap">
                             <h3 class="section-title">
                                 {{__t('featured_courses')}}
-
-                                <a href="{{route('featured_courses')}}" class="btn btn-link float-right"><i class="la la-bookmark"></i> {{__t('all_featured_courses')}}</a>
                             </h3>
-
-                            <p class="section-subtitle">{{__t('featured_courses_desc')}}</p>
                         </div>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{{route('featured_courses')}}" class="btn btn-link view-btn float-right"></i> View all courses</a>
                     </div>
                 </div>
                 <div class="popular-courses-cards-wrap mt-3">
-                    <div class="row slick_slider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "arrows":true, "dots":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":1020,"settings":{"slidesToShow": 2}} , {"breakpoint":768,"settings":{"slidesToShow": 2}}, {"breakpoint":575,"settings":{"slidesToShow": 1}}]}'>
+                    <div class="row slick_slider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "arrows":true, "dots":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":1020,"settings":{"slidesToShow": 2}} , {"breakpoint":768,"settings":{"slidesToShow": 1}}, {"breakpoint":575,"settings":{"slidesToShow": 1}}]}'>
                         @foreach($featured_courses as $course)
                             {!! course_card($course, 'col-md-4') !!}
                         @endforeach
@@ -130,14 +159,14 @@
                         <div class="section-header-wrap">
                             <h3 class="section-title">{{__t('popular_courses')}}
 
-                                <a href="{{route('popular_courses')}}" class="btn btn-link float-right"><i class="la la-list"></i> {{__t('all_popular_courses')}}</a>
+                                <a href="{{route('popular_courses')}}" class="btn btn-link  view-btn float-right"><!-- <i class="la la-list"></i> --> {{__t('all_popular_courses')}}</a>
                             </h3>
-                            <p class="section-subtitle">{{__t('popular_courses_desc')}}</p>
+                            <!-- <p class="section-subtitle">{{__t('popular_courses_desc')}}</p> -->
                         </div>
                     </div>
                 </div>
                 <div class="popular-courses-cards-wrap mt-3">
-                    <div class="row slick_slider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "arrows":false, "dots":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":1020,"settings":{"slidesToShow": 2}} , {"breakpoint":768,"settings":{"slidesToShow": 2}}, {"breakpoint":575,"settings":{"slidesToShow": 1}}]}'>
+                    <div class="row slick_slider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "arrows":false, "dots":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":1020,"settings":{"slidesToShow": 2}} , {"breakpoint":768,"settings":{"slidesToShow": 1}}, {"breakpoint":575,"settings":{"slidesToShow": 1}}]}'>
                         @foreach($featured_courses as $course)
                             {!! course_card($course) !!}
                         @endforeach
@@ -156,15 +185,15 @@
                         <div class="section-header-wrap">
                             <h3 class="section-title">{{__t('new_arrival')}}
 
-                                <a href="{{route('courses')}}" class="btn btn-link float-right"><i class="la la-list"></i> {{__t('all_courses')}}</a>
+                                <a href="{{route('courses')}}" class="btn btn-link  view-btn float-right"><!-- <i class="la la-list"></i>  -->{{__t('all_courses')}}</a>
                             </h3>
-                            <p class="section-subtitle">{{__t('new_arrival_desc')}}</p>
+                            <!-- <p class="section-subtitle">{{__t('new_arrival_desc')}}</p> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="popular-courses-cards-wrap mt-3">
-                    <div class="row slick_slider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "arrows":false, "dots":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":1020,"settings":{"slidesToShow": 2}} , {"breakpoint":768,"settings":{"slidesToShow": 2}}, {"breakpoint":575,"settings":{"slidesToShow": 1}}]}'>
+                    <div class="row slick_slider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "arrows":false, "dots":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":1020,"settings":{"slidesToShow": 2}} , {"breakpoint":768,"settings":{"slidesToShow": 1}}, {"breakpoint":575,"settings":{"slidesToShow": 1}}]}'>
                         @foreach($new_courses as $course)
                             {!! course_card($course) !!}
                         @endforeach
@@ -175,33 +204,15 @@
     @endif
 
 
-        <div class="home-course-stats-wrap pb-5 mb-2 text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <p class="count">580+</p> 
-                        <h5>Active Courses</h5>
-                    </div>
-                    <div class="col-md-3"> 
-                        <p class="count">1200+</p> 
-                        <h5>Hours Video</h5>
-                    </div>
-                    <div class="col-md-3">
-                        <p class="count">850+</p> 
-                        <h5>Teachers</h5>
-                    </div>
-                    <div class="col-md-3">
-                        <p class="count">1800+</p> 
-                        <h5>Students Learning</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
         <div class="home-cta-wrapp text-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 home-cta-left-col">
+                    <div class="col-sm-12 col-lg-6 home-cta-rt">
+
+                    </div>
+                    <div class="col-sm-12 col-lg-6 home-cta-left-col">
 
                         <div class="home-cta-text-wrapper px-5 text-center">
                             <h4>Become an instructor</h4>
@@ -213,7 +224,7 @@
 
                     </div>
 
-                    <div class="col-sm-6">
+                   <!--  <div class="col-sm-12 col-lg-6">
 
                         <div class="home-cta-text-wrapper px-5 text-center">
                             <h4>Discover latest technology</h4>
@@ -222,13 +233,13 @@
                             <a href="{{route('courses')}}" class="btn btn-theme-primary">{{__t('find_new_courses')}}</a>
                         </div>
 
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
         </div>
 
-    @if($posts->count())
+ <!--    @if($posts->count())
     <div class="home-section-wrap home-blog-section-wrapper py-5">
 
         <div class="container">
@@ -262,9 +273,9 @@
                                     </span>
                                     <a href="{{$post->url}}"> READ MORE &nbsp;<i class="fa fa-angle-right"></i> </a>
                                 </div>
-                                <!-- <p class="mt-4">
+                                <p class="mt-4">
                                     <a href="{{$post->url}}"><strong>READ MORE <i class="la la-arrow-right"></i> </strong></a>
-                                </p> -->
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -317,6 +328,6 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
 @endsection

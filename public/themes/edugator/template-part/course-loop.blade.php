@@ -21,23 +21,26 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
 
         <div class="course-card-contents">
             <a href="{{route('course', $course->slug)}}">
-                <h4 class="course-card-title mb-3">{{$course->title}}</h4>
-                <p class="course-card-short-info mb-2 d-flex justify-content-between">
-                    <span><i class="la la-play-circle"></i> {{$course->total_lectures}} {{__t('lectures')}}</span>
-                    <span><i class="la la-signal"></i> {{course_levels($course->level)}}</span>
-                </p>
+                <h4 class="course-card-title mb-1">{{$course->title}}</h4>
             </a>
 
             <div class="course-card-info-wrap">
-                <p class="course-card-author d-flex justify-content-between">
+                <p class="course-card-author d-flex justify-content-between align-items-center">
                     <span>
                         <i class="la la-user"></i> by <a href="{{route('profile', $course->user_id)}}">{{$course->author->name}}</a>
                     </span>
+                </p>
+                <p class="category-name">
                     @if($course->category)
                         <span>
-                            <i class="la la-folder"></i> in <a href="{{route('category_view', $course->category->slug)}}">{{$course->category->category_name}}</a>
+                            <i class="la la-folder"></i> In <a href="{{route('category_view', $course->category->slug)}}">{{$course->category->category_name}}</a>
                         </span>
                     @endif
+                </p>
+
+                <p class="course-card-short-info mb-2 d-flex justify-content-between">
+                    <span><i class="la la-play-circle"></i> {{$course->total_lectures}} {{__t('lectures')}}</span>
+                    <span><i class="fa fa-signal"></i> {{course_levels($course->level)}}</span>
                 </p>
                 @if($course->rating_count)
                     <div class="course-card-ratings">

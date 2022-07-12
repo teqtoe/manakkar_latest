@@ -68,7 +68,7 @@
                     <div class="footer-bottom-contents-wrap d-flex">
 
                         <div class="footer-bottom-left d-flex">
-                            <h5 class="text-warning">teqtoe LMS</h5>
+                            <h5 class="text-primary">teqtoe LMS</h5>
                             <span class="ml-4">Copyright © 2020 teqtoe. All rights reserved.</span>
                         </div>
 
@@ -112,11 +112,14 @@
 <!-- bootstrap js -->
 <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 
+
+<!--Teqtoe-->
+<script src="{{asset('themes/edugator/assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('themes/edugator/assets/js/slick.min.js')}}"></script>
 @yield('page-js')
 
 <!-- main js -->
 <script src="{{theme_asset('js/main.js')}}"></script>
-
 
 
 </body>

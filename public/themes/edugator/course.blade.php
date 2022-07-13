@@ -47,7 +47,7 @@
 
                     </div>
 
-                    
+
 
                     @if($course->description)
                         <div class="course-description mt-4 mb-5">
@@ -333,9 +333,7 @@
                                         $attachments_count = $course->contents_attachments->count();
                                     @endphp
 
-                                    <p class="mt-3 course-head-meta-wrap">
-                                        <span>{!! $course->price_html(false, false) !!} </span>
-                                    </p>
+
 
                                     <ul class="price-box-content">
                                         <li>
@@ -406,6 +404,8 @@
                                     </ul>
                                 </div>
 
+                        <p class="mt-3 course-head-meta-wrap">
+          
                         @if( $isEnrolled)
                             <p class="text-muted text-center mt-3 mb-4"><strong>Enrolled At</strong> : {{date('F d, Y', strtotime($isEnrolled->enrolled_at))}} </p>
 
@@ -451,6 +451,7 @@
                                 </form>
                             @endif
                         @endif
+                        </p>
 
                     </div>
 

@@ -52,7 +52,7 @@
 <div class="main-navbar-wrap">
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
 
         <div class="container">
             <a class="navbar-brand site-main-logo" href="{{route('home')}}">
@@ -130,9 +130,9 @@
                         </div>
 
                     </li>
-                    <!-- <li class="nav-item dropdown mini-cart-item">
+                    <li class="nav-item dropdown mini-cart-item">
                         {!! view_template_part('template-part.minicart') !!}
-                    </li> -->
+                    </li>
 
                     @if (Auth::guest())
                         <li class="nav-item mr-2 ml-2">

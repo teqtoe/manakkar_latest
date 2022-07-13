@@ -6,7 +6,7 @@
         $contine_url = $course->continue_url;
     @endphp
 
-    <div class="page-header-jumborton py-5">
+    <div class="page-header-jumborton">
 
         <div class="container">
             <div class="row">
@@ -17,76 +17,18 @@
                             <p class="page-header-subtitle m-0">{{clean_html($course->short_description)}}</p>
                         @endif
 
-                        <p class="mt-3 course-head-meta-wrap">
-                            <span><i class="la la-signal"></i> {{course_levels($course->level)}} </span>
-                        </p>
-
-                        <p>
-                            <span class="created-by mr-3">
-                                <i class="la la-user"></i> {{__t('created_by')}} {{$course->author->name}}
+                        <p class="author mt-4">
+                            <span class="created-by">
+                                <!-- <i class="la la-user"></i> --> {{__t('created_by')}} <span class="author-name">{{$course->author->name}}</span>
                             </span>
 
                             <span class="last-updated-at">
-                                <i class="la la-clock"></i>
-                                {{__t('last_updated')}} {{$course->last_updated_at->format(date_time_format())}}
+                                <!-- <i class="la la-clock"></i> -->
+                                {{__t('last_updated')}} <span class="author-name"> {{$course->last_updated_at->format(date_time_format())}}</span>
                             </span>
                         </p>
 
                     </div>
-                </div>
-
-                <div class="col-md-4">
-
-                    <div class="page-header-right-enroll-box p-3 mt-sm-4 mt-md-0 bg-white shadow">
-
-                        @if( $isEnrolled)
-                            <p class="text-muted"><strong>Enrolled At</strong> : {{date('F d, Y', strtotime($isEnrolled->enrolled_at))}} </p>
-
-                            <a href="{{$contine_url}}" class="btn btn-info btn-lg btn-block"><i class="la la-play-circle"></i> Continue course</a>
-
-                        @else
-                            @if($course->paid)
-
-                                <div class="course-landing-page-price-wrap">
-                                    {!! $course->price_html(false, true) !!}
-                                </div>
-
-                                <form action="{{route('add_to_cart')}}" class="add_to_cart_form" method="post">
-                                    @csrf
-
-                                    <input type="hidden" name="course_id" value="{{$course->id}}">
-
-                                    <div class="enroll-box-btn-group mt-3">
-
-                                        <?php
-                                        $in_cart = cart($course->id)
-
-                                        ?>
-                                        <button type="button" class="btn btn-lg btn-theme-primary btn-block mb-3 add-to-cart-btn" data-course-id="{{$course->id}}" name="cart_btn" value="add_to_cart" {{$in_cart? 'disabled="disabled"' : ''}} >
-                                            @if($in_cart)
-                                                <i class='la la-check-circle'></i> Added to cart
-                                            @else
-                                                <i class="la la-shopping-cart"></i> Add to cart
-                                            @endif
-                                        </button>
-                                        <button type="submit" class="btn btn-lg btn-outline-dark btn-block" name="cart_btn" value="buy_now">Buy now</button>
-                                    </div>
-                                </form>
-
-                            @elseif($course->free)
-                                <div class="course-landing-page-price-wrap">
-                                    {!! $course->price_html(false, true) !!}
-                                </div>
-                                <form action="{{route('free_enroll')}}" class="course-free-enroll" method="post">
-                                    @csrf
-                                    <input type="hidden" name="course_id" value="{{$course->id}}">
-                                    <button type="submit" class="btn btn-warning btn-lg btn-block">{{__t('enroll_now')}}</button>
-                                </form>
-                            @endif
-                        @endif
-
-                    </div>
-
                 </div>
 
             </div>
@@ -95,67 +37,32 @@
     </div>
 
 
-    <div class="container my-4">
+    <div class="container my-5">
 
         <div class="row">
-            <div class="col-md-10 offset-md-1">
-
-
+            <div class="col-md-8"> <!-- offset-md-1 -->
                 <div class="course-details-wrap">
-
-
                     <div class="course-intro-stats-wrapper mb-4">
 
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <div class="course-whats-included-box course-widget p-4">
-                                    <h4 class="mb-4">{{__t('whats_included')}}</h4>
-
-                                    @php
-                                        $lectures_count = $course->lectures->count();
-                                        $assignments_count = $course->assignments->count();
-                                        $attachments_count = $course->contents_attachments->count();
-                                    @endphp
-
-                                    <ul>
-                                        @if($course->total_video_time)
-                                            <li> <i class="la la-video"></i> {{seconds_to_time_format($course->total_video_time)}} {{__t('on_demand_video')}} </li>
-                                        @endif
-
-                                        <li> <i class="la la-book"></i> {{$lectures_count}} {{__t('lectures')}} </li>
-                                        @if($assignments_count)
-                                            <li> <i class="la la-tasks"></i> {{$assignments_count}} {{__t('assignments')}}</li>
-                                        @endif
-                                        @if($attachments_count)
-                                            <li> <i class="la la-file-download"></i> {{$attachments_count}} downloadable resources </li>
-                                        @endif
-
-                                        <li> <i class="la la-mobile"></i> Access on tablet and phone </li>
-                                        <li> <i class="la la-certificate"></i> Certificate of completion </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6">
-
-                                @if($course->video_info())
-                                    @include(theme('video-player'), ['model' => $course, 'video_caption' => __t('preview')])
-                                @else
-                                    <img src="{{media_image_uri($course->thumbnail_id)->image_md}}" class="img-fluid" />
-                                @endif
-
-
-                            </div>
-                        </div>
 
                     </div>
 
+                    
 
+                    @if($course->description)
+                        <div class="course-description mt-4 mb-5">
+                            <h4 class="mb-4 course-description-title">{{__t('description')}}</h4>
+
+                            <div class="content-expand-wrap">
+                                <div class="content-expand-inner">
+                                    {!! $course->description !!}
+                                </div>
+                            </div>
+                        </div>
+                    @endif
 
                     @if($course->benefits_arr)
-                        <div class="course-widget mb-4 p-4">
+                        <div class="course-widget mb-4">
                             <h4 class="mb-4">{{__t('what_learn')}}</h4>
 
                             <div class="content-expand-wrap">
@@ -267,18 +174,6 @@
                                     </li>
                                 @endforeach
                             </ul>
-                        </div>
-                    @endif
-
-                    @if($course->description)
-                        <div class="course-description mt-4 mb-5">
-                            <h4 class="mb-4 course-description-title">{{__t('description')}}</h4>
-
-                            <div class="content-expand-wrap">
-                                <div class="content-expand-inner">
-                                    {!! $course->description !!}
-                                </div>
-                            </div>
                         </div>
                     @endif
 
@@ -414,6 +309,152 @@
                 </div>
 
             </div>
+
+
+
+                <div class="col-md-4">
+
+                    <div class="page-header-right-enroll-box p-3 mt-sm-4 mt-md-0 bg-white shadow">
+
+                        @if($course->video_info())
+                            @include(theme('video-player'), ['model' => $course])
+                        @else
+                            <img src="{{media_image_uri($course->thumbnail_id)->image_md}}" class="img-fluid" />
+                        @endif
+
+
+
+                                <div class="course-whats-included-box px-3">
+                                    <!-- <h4 class="mb-4">{{__t('whats_included')}}</h4> -->
+
+                                    @php
+                                        $lectures_count = $course->lectures->count();
+                                        $assignments_count = $course->assignments->count();
+                                        $attachments_count = $course->contents_attachments->count();
+                                    @endphp
+
+                                    <p class="mt-3 course-head-meta-wrap">
+                                        <span>{!! $course->price_html(false, false) !!} </span>
+                                    </p>
+
+                                    <ul class="price-box-content">
+                                        <li>
+                                            <div class="price-box-icon">
+                                                <i class="ti-bar-chart"></i> Levels
+                                            </div>
+                                            <div class="price-box-info">
+                                                {{course_levels($course->level)}}
+                                            </div>
+                                        </li>
+
+                                        @if($course->total_video_time)
+                                            <li> 
+                                                <div class="price-box-icon">
+                                                    <i class="la la-video"></i> Duration
+                                                </div>
+                                                <div class="price-box-info"> 
+                                                    {{seconds_to_time_format($course->total_video_time)}}  {{__t('on_demand_video')}} 
+                                                </div>
+                                            </li>
+                                        @endif
+
+                                        <li> 
+                                            <div class="price-box-icon">
+                                                <i class="la la-book"></i>  {{__t('lectures')}}
+                                            </div>
+                                            <div class="price-box-info"> 
+                                                {{$lectures_count}} 
+                                            </div>
+                                        </li>
+
+                                        @if($assignments_count)
+                                            <li> 
+                                                <div class="price-box-icon">
+                                                    <i class="la la-tasks"></i> {{__t('assignments')}}
+                                                </div>
+                                                <div class="price-box-info"> 
+                                                    {{$assignments_count}} 
+                                                </div>
+                                            </li>
+                                        @endif
+
+                                        @if($attachments_count)
+                                            <li> 
+                                                <div class="price-box-icon">
+                                                    <i class="la la-file-download"></i> Downloadable Resources 
+                                                </div>
+                                                <div class="price-box-info">
+                                                    {{$attachments_count}}
+                                                </div> 
+                                            </li>
+                                        @endif
+
+                                        <li>
+                                            <div class="price-box-icon">
+                                                <i class="la la-mobile"></i> Access
+                                            </div>
+                                            <div class="price-box-info">  
+                                                Tablet and Phone 
+                                            </div>
+                                        </li>
+
+                                        <li> 
+                                            <div class="price-box-icon">
+                                                <i class="la la-certificate"></i> Certificate of Completion 
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                        @if( $isEnrolled)
+                            <p class="text-muted text-center mt-3 mb-4"><strong>Enrolled At</strong> : {{date('F d, Y', strtotime($isEnrolled->enrolled_at))}} </p>
+
+                            <a href="{{$contine_url}}" class="btn btn-info btn-lg btn-block"><i class="la la-play-circle"></i> Continue course</a>
+
+                        @else
+                            @if($course->paid)
+
+                                <div class="course-landing-page-price-wrap">
+                                    {!! $course->price_html(false, true) !!}
+                                </div>
+
+                                <form action="{{route('add_to_cart')}}" class="add_to_cart_form" method="post">
+                                    @csrf
+
+                                    <input type="hidden" name="course_id" value="{{$course->id}}">
+
+                                    <div class="enroll-box-btn-group mt-3">
+
+                                        <?php
+                                        $in_cart = cart($course->id)
+
+                                        ?>
+                                        <button type="button" class="btn btn-lg btn-theme-primary btn-block mb-3 add-to-cart-btn" data-course-id="{{$course->id}}" name="cart_btn" value="add_to_cart" {{$in_cart? 'disabled="disabled"' : ''}} >
+                                            @if($in_cart)
+                                                <i class='la la-check-circle'></i> Added to cart
+                                            @else
+                                                <i class="la la-shopping-cart"></i> Add to cart
+                                            @endif
+                                        </button>
+                                        <button type="submit" class="btn btn-lg btn-outline-dark btn-block" name="cart_btn" value="buy_now">Buy now</button>
+                                    </div>
+                                </form>
+
+                            @elseif($course->free)
+                                <div class="course-landing-page-price-wrap">
+                                    {!! $course->price_html(false, true) !!}
+                                </div>
+                                <form action="{{route('free_enroll')}}" class="course-free-enroll" method="post">
+                                    @csrf
+                                    <input type="hidden" name="course_id" value="{{$course->id}}">
+                                    <button type="submit" class="btn btn-warning btn-lg btn-block">{{__t('enroll_now')}}</button>
+                                </form>
+                            @endif
+                        @endif
+
+                    </div>
+
+                </div>
 
         </div>
 

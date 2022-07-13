@@ -32,7 +32,7 @@
             @endforeach
         </div>
 
-        <div class="mini-cart-total-wrap p-4">
+        <div class="mini-cart-total-wrap p-3">
             <p class="minicart-total-price">
                 Total : <strong>{!! price_format($cart->total_price) !!}</strong>
 

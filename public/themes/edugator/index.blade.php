@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="hero-banner py-3">
+    <div class="hero-banner py-5">
 
         <div class="container">
             <div class="row">
@@ -71,7 +71,7 @@
     </div>
 
 
-    <div class="home-section-wrap home-info-box-wrapper py-5">
+    <!-- <div class="home-section-wrap home-info-box-wrapper py-5">
         <div class="container">
             <div class="row">
 
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     @if($featured_courses->count())

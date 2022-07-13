@@ -2,7 +2,7 @@
 $gridClass = $grid_class ? $grid_class : 'col-md-3';
 ?>
 
-<div class="{{$gridClass}} course-card-grid-wrap ">
+<div class="col-sm-12 col-md-6 course-card-grid-wrap ">
     <div class="course-card mb-5">
 
         <div class="course-card-img-wrap">

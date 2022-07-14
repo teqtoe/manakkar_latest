@@ -36,12 +36,6 @@
             </li>
 
             <li>
-                <a href="{{route('themes')}}" class="{{request()->is('admin/themes*') ? 'active' : ''}}">
-                    <i class="la la-brush"></i> {{__a('themes')}}
-                </a>
-            </li>
-
-            <li>
                 <a href="#"><i class="la la-tools fa-fw"></i> @lang('admin.settings')<span class="la arrow"></span></a>
                 <ul class="nav nav-second-level" style="display: none;">
                     @php

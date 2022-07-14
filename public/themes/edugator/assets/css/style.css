@@ -20,7 +20,7 @@ body{
 h1,h2,h3,h4,h5,h6{
     font-family: 'Rubik', sans-serif;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 25px;
     color: #3d3d3d;
 }
 body.rtl {
@@ -1988,14 +1988,18 @@ User Profile Page
 */
 .social-login-item{
     padding: 8px 15px;
-    background-color: #eeeeee;
     display: block;
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 5px;
-    color: #ffffff;
+    color: #343434;
+    border-radius: 8px;
+    border: 1px solid #ececec;
+    background-color: #fff;
+    transition: all .3s ease;
 }
 .social-login-item:hover{
-    color: #ffffff;
+    background-color: #f1f1f1;
+    transition: all .3s ease;
 }
 .social-login-item.btn-facebook{
     background-color: #3D5E96;
@@ -2044,21 +2048,26 @@ User Profile Page
 .cookie_notice_popup{
     position: fixed;
     z-index: 999;
-    bottom: 20px;
-    background-color: rgb(237, 239, 245);
-    color: rgb(131, 131, 145);
-    width: 300px;
-    right: 20px;
+    bottom: 0;
+    background-color: rgb(50 50 50 / 92%);
+    color: rgb(255 255 255);
+    width: 100%;
+    right: 0;
+    display: flex;
+    justify-content: center;
 }
 .cookie_notice_msg{
     padding: 20px;
 }
 .cookie_notice_popup .cookie-dismiss{
     color: rgb(255, 255, 255);
-    background-color: #4B81E8;
-    padding: 0.5em;
+    border: 1px solid #ffffff78;
+    background-color: rgb(0 0 0 / 54%);
+    padding: 0.5em 36px;
+    margin: 11px;
     text-align: center;
     display: block;
+    border-radius: 6px;
 }
 .cookie_notice_popup .cookie-dismiss:hover {
     background-color: #205fd6;
@@ -2458,11 +2467,6 @@ Teqtoe
     color: #0092c6!important;
 }
 
-.signup-btn{
-    width: 150px;
-    text-transform: uppercase;
-}
-
 .add-to-cart-btn{
     padding: 8px 15px;
     text-transform: uppercase;
@@ -2632,7 +2636,7 @@ Teqtoe
     border-radius: 0.5rem;
     box-shadow: none;
     padding: 10px 10px;
-    height: 50px;
+    height: 45px;
     font-size: 14px;
 }
 .custom-control-label::before{
@@ -2732,9 +2736,43 @@ input[type=checkbox], input[type=radio]{
     border-bottom: 1px solid #e9e9e9;
 }
 
-.login .card{
-    padding: 15px;
+
+.login-box {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 10px;
 }
+.login-box .card-content{
+    padding: 20px 40px;
+}
+.login-box .card-content .card-body .checkbox span{
+    margin-left: 5px;
+    margin-top: -5px;
+}
+/*.login-box .card-content .card-body input[type=checkbox]{
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    height: 15px;
+    width: 15px;
+}*/
+
+.login-box  .signup-btn{
+    color: #fff;
+    background-color: #0092c6;
+    box-shadow: 0 3px 6px 0 rgb(0 142 220 / 30%);
+    transition: all .3s;
+    border-color: #0092c6;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+}
+.login-box img{
+    border-radius: 10px 0 0 10px;
+}
+
 
 
 

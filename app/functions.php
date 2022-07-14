@@ -1665,16 +1665,13 @@ if ( ! function_exists('get_pages')) {
 
 if ( ! function_exists('cookie_message_html')) {
     function cookie_message_html(){
-        //$msg = get_option('cookie_alert.message');
-
-        $msg = 'By using Manakkar you accept our cookies and agree to our privacy policy, including cookie policy.';
-
+        $msg = get_option('cookie_alert.message');
         $link = "<a href='" . route('post_proxy', get_option('privacy_policy_page')) . "'>" . __t('read_privacy_policy') . "</a>";
         $msg = str_replace('{privacy_policy_url}', $link, $msg);
 
         return '<div class="cookie_notice_popup">
         <div class="cookie_notice_msg">'.$msg.'</div>
-        <a href="" class="cookie-dismiss">Ok</a>
+        <a href="" class="cookie-dismiss">Accept</a>
     </div>';
     }
 }

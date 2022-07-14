@@ -44,7 +44,7 @@ a{
     color: #0092c6;
 }
 a:hover{
-    color: var(--a-hover-color);
+    color: #17a2b8;
     text-decoration: none;
 }
 a.disabled{
@@ -1155,13 +1155,13 @@ END Media Manager
     cursor: pointer;
 }
 .course-section-header .course-section-name{
-    color: #666666;
+    color: #494949;
 }
 .page-header-jumborton{
     min-height:220px;
     background: linear-gradient(45deg, #007200eb 0%,#008390fa 100%), url(../image/banner.jpg) no-repeat scroll center center / cover;
     /*background:linear-gradient(135deg, #011D4A 0%, #448ECB 100%);*/
-    padding: 180px 0;
+    padding: 100px 0;
 }
 
 .page-header-jumborton .page-header-left{
@@ -1183,14 +1183,19 @@ END Media Manager
     position: sticky;
     top: 0;
     /*border-top: 10px solid #CCCCCC;*/
-    padding: 20px 20px 40px 20px!important;
+    padding: 0 !important;
+    /*padding: 20px 20px 40px 20px!important;*/
     border-radius: 5px;
-    -webkit-box-shadow: 0px 10px 50px 0px rgb(44 44 52 / 8%)!important;
-    box-shadow: 0px 10px 50px 0px rgb(44 44 52 / 8%)!important;
+    -webkit-box-shadow: 0px 10px 18px 0px rgb(44 44 52 / 8%)!important;
+    box-shadow: 0px 10px 18px 0px rgb(44 44 52 / 8%)!important;
     border: none;
     background: #ffffff;
     margin-bottom: 55px;
 }
+.page-header-right-enroll-box img{
+        border-radius: 6px 6px 0px 0px;
+}
+
 .enroll-box-btn-group button{
     font-size: 16px;
     padding: .8rem 1rem;
@@ -1209,6 +1214,11 @@ END Media Manager
     font-size: 80%;
     color: #8a92a3;
 }
+.course-landing-page-price-wrap .price-html-wrap{
+    color: #0a651f;
+    text-align: center;
+    margin: 30px 0;
+}
 .course-landing-page-price-wrap .price-html-wrap .old-price, .course-landing-page-price-wrap .price-html-wrap  .discount-text {
     font-size: 18px;
     color: #8a92a3;
@@ -1222,8 +1232,15 @@ END Media Manager
 .course-curriculum-item{
     padding: 10px;
 }
+.course-curriculum-item .curriculum-item-title a {
+    color: #7b7b7b;
+}
 .course-section-item-details {
     flex: 0 0 190px;
+}
+.course-section-item-details .section-item-preview a{
+    color: #0c781c;
+    font-weight: 700;
 }
 .section-item-duration{
     flex: 0 0 60px;
@@ -1280,7 +1297,7 @@ END Media Manager
 
 /** Instructor Box **/
 .course-single-instructor-wrap .instructor-stats{
-    flex: 0 0 220px;
+    flex: 0 0 135px;
 }
 .instructor-stats .profile-image img {
     border-radius: 50%;
@@ -1292,14 +1309,36 @@ END Media Manager
 .instructor-details .instructor-name{
     font-weight: 600;
 }
+.instructor-meta-data .instructor-course-students {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.instructor-meta-data .instructor-course-students .instructor-stat-value i{
+    font-size: 22px;
+}
+
 
 /** END: Instructor Box **/
+
+#course-rating-stats-wrap{
+    padding: 50px;
+    border: 1px solid #e8eff1;
+}
+
 
 /**
 * Review Box
 */
 .rating-stats-avg{
     text-align: center;
+    padding: 45px 30px 8px 30px;
+    color: #1b2336;
+    border-radius: 5px;
+    background: #ffffff;
+    -webkit-box-shadow: 0 0 28px rgb(44 44 52 / 8%);
+    box-shadow: 0 0 28px rgb(44 44 52 / 8%);
 }
 .review-write-star-wrap i, .generated-star-rating-wrap i{
     color: #f4c150;
@@ -1308,10 +1347,11 @@ END Media Manager
 }
 
 .star-rating-bar-bg{
-    background: #f2f3f5;
-    height: 20px;
+    background: #efefef;
+    height: 15px;
     width: 100%;
     margin-right: 20px;
+    margin-top: 6px;
 }
 .rating-percent-text {
     flex: 0 0 64px;
@@ -1319,15 +1359,20 @@ END Media Manager
 }
 .rating-avg-big {
     font-size: 60px;
+    font-weight: 600;
 }
+.rating-stats-avg .generated-star-rating-wrap{
+        margin-top: 20px;
+}
+
 .star-rating-bar-fill{
-    background-color: #8a92a3;
+    background-color: #f4c150;
     display: block;
     height: 100%;
 }
 .star-rating-percent-wrap {
     flex: 0 0 120px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     text-align: right;
 }
 .reviews-list-wrap .reviewed-user{
@@ -1349,6 +1394,11 @@ END Media Manager
     font-size: 20px;
     font-weight: 600;
 }
+.reviews-list-wrap .single-review{
+    border: 1px solid #e8eff1;
+    padding: 40px 30px;
+}
+
 /** END Course Single **/
 
 /**
@@ -1905,10 +1955,17 @@ User Profile Page
 .video-js .vjs-big-play-button .vjs-icon-placeholder:before{
     font-size: 35px;
 }
+.video-js .vjs-big-play-button:hover, .video-js .vjs-big-play-button:focus, .video-js:hover .vjs-big-play-button{
+        background-color: rgb(0 145 168);
+}
 .vjs-poster{
     background-color: transparent;
+    border-radius: 6px 6px 0px 0px;
 }
 
+.video-js.vjs-16-9, .video-js.vjs-4-3, .video-js.vjs-fluid, .video-js .vjs-tech{
+    border-radius: 6px 6px 0px 0px;
+}
 .video-player-wrapper{
     position: relative;
 }
@@ -2646,7 +2703,7 @@ input[type=checkbox], input[type=radio]{
     font-size: 14px;
     line-height: 26px;
     font-weight: 700;
-    color: #012f37;
+    color: #005361;
 }
 
 .course-whats-included-box .price-box-content li .price-box-icon i{
@@ -2675,6 +2732,9 @@ input[type=checkbox], input[type=radio]{
     border-bottom: 1px solid #e9e9e9;
 }
 
+.login .card{
+    padding: 15px;
+}
 
 
 
@@ -2708,6 +2768,18 @@ input[type=checkbox], input[type=radio]{
         display: block;
         background: #0092c6!important;
         color: #fff!important;
+    }
+    .page-header-right-enroll-box{
+        margin-top: 0px!important;
+    }
+    .star-rating-reviews-bar-wrap{
+        display: none!important;
+    }
+    .rating-stats-avg{
+        margin: 0 auto!important;
+    }
+    .reviews-list-wrap .single-review .reviewed-user{
+            display: block !important;
     }
 }
 

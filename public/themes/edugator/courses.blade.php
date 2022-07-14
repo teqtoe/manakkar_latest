@@ -7,11 +7,10 @@
         $path = request()->path();
     @endphp
 
-    <div class="page-header-wrapper bg-light-sky py-4">
+    <div class="page-header-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-
                     <nav aria-label="breadcrumb">
                         <ol class='breadcrumb mb-0'>
                             <li class='breadcrumb-item'>
@@ -28,7 +27,18 @@
                             @endif
                         </ol>
                     </nav>
-                    <h1 class="mb-3">{{$title}}</h1>
+                    <h1 class="mb-3 text-white text-center">{{$title}}</h1>
+
+                        <div class="header-search-wrap my-2 my-lg-0  ml-2">
+                            <form action="{{route('courses')}}" class=" cours-search" method="get">
+                                <div class="input-group">
+                                    <input class="form-control" type="search" name="q" value="{{request('q')}}" placeholder="What do you want to learn today?">
+                                    <div class="input-group-append">
+                                        <button class="btn my-2 my-sm-0 header-search-btn" type="submit">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                 </div>
 
             </div>
@@ -45,7 +55,7 @@
 
                 <div class="row">
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
 
 
                         <div class="course-filter-wrap">
@@ -64,7 +74,7 @@
 
                             @if($categories->count())
 
-                                <div class="course-filter-form-group box-shadow p-3 mb-4">
+                                <div class="course-filter-form-group">
                                     <div class="form-group">
                                         <h4 class="mb-3">{{__t('category')}}</h4>
 
@@ -101,7 +111,7 @@
                             @endif
 
 
-                            <div class="course-filter-form-group box-shadow p-3 mb-4">
+                            <div class="course-filter-form-group">
                                 <div class="form-group">
                                     <h4 class="mb-3">{{__t('course_level')}}</h4>
                                     @foreach(course_levels() as $key => $level)
@@ -113,7 +123,7 @@
                                 </div>
                             </div>
 
-                            <div class="course-filter-form-group box-shadow p-3 mb-4">
+                            <div class="course-filter-form-group">
                                 <div class="form-group">
                                     <h4 class="mb-3">{{__t('price')}}</h4>
 
@@ -130,7 +140,7 @@
                                 </div>
                             </div>
 
-                            <div class="course-filter-form-group box-shadow p-3 mb-4">
+                            <div class="course-filter-form-group">
                                 <div class="form-group">
                                     <h4 class="mb-3">{{__t('ratings')}}</h4>
                                     <div class="filter-form-by-rating-field-wrap">
@@ -166,7 +176,7 @@
                             </div>
 
 
-                            <div class="course-filter-form-group box-shadow p-3 mb-4">
+                            <div class="course-filter-form-group">
                                 <div class="form-group">
                                     <h4 class="mb-3">{{__t('video_duration')}}</h4>
 
@@ -202,12 +212,12 @@
 
                     </div>
 
-                    <div class="col-md-9">
+                    <div class="col-md-8">
 
                         <div class="course-sorting-form-wrap form-inline mb-4">
 
                             <div class="form-group mr-2">
-                                <button type="button" id="hide-course-filter-sidebar" class="btn btn-outline-dark">
+                                <button type="button" id="hide-course-filter-sidebar" class="btn">
                                     <i class="la la-filter"></i> Filter  {{count(array_except(array_filter(request()->input()), 'q'))}}
                                 </button>
                             </div>

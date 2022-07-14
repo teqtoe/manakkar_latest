@@ -22,9 +22,19 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/line-awesome.min.css')}}">
 
+    <!-- Teqtoe -->
+    <link rel="stylesheet" href="{{theme_asset('css/slick.css')}}">
+    <link rel="stylesheet" href="{{theme_asset('css/linea-fonts.css')}}">
+    <link rel="stylesheet" href="{{theme_asset('css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{theme_asset('css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{theme_asset('css/font-awesome.min.css')}}">
+    
+    <link rel="stylesheet" href="{{'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'}}">
+
+
 @yield('page-css')
 
-<!-- style css -->
+    <!-- style css -->
     <link rel="stylesheet" href="{{theme_asset('css/style.css')}}">
 
     <!-- modernizr css -->
@@ -42,7 +52,7 @@
 <div class="main-navbar-wrap">
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
 
         <div class="container">
             <a class="navbar-brand site-main-logo" href="{{route('home')}}">
@@ -62,8 +72,15 @@
 
             <div class="collapse navbar-collapse" id="mainNavbarContent">
                 <ul class="navbar-nav categories-nav-item-wrapper mt-2 mt-lg-0">
+
+                </ul>
+
+                
+
+                <ul class="navbar-nav main-nav-auth-profile-wrap justify-content-end mt-2 mt-lg-0 flex-grow-1">
+
                     <li class="nav-item nav-categories-item">
-                        <a class="nav-link browse-categories-nav-link" href="{{route('categories')}}"> <i class="la la-th-large"></i> {{__t('categories')}}</a>
+                        <a class="nav-link" href="{{route('categories')}}"> <i class="la la-th-large"></i> {{__t('categories')}}  <i class="fa fa-angle-down"></i> </a>
 
                         <div class="categories-menu">
                             <ul class="categories-ul-first">
@@ -95,28 +112,35 @@
 
                     </li>
 
-                </ul>
+                    <li class="nav-item nav-categories-item">
+                        <a class="nav-link" href=""> MCQ <i class="fa fa-angle-down"></i> </a>
 
-                <div class="header-search-wrap my-2 my-lg-0  ml-2">
-                    <form action="{{route('courses')}}" class="form-inline " method="get">
-                        <input class="form-control" type="search" name="q" value="{{request('q')}}" placeholder="Search">
-                        <button class="btn my-2 my-sm-0 header-search-btn" type="submit"><i class="la la-search"></i></button>
-                    </form>
-                </div>
+                        <div class="categories-menu">
+                            <ul class="categories-ul-first">
+                                <li>
+                                    <a href="">J2EE</a>
+                                </li>
+                                <li>
+                                    <a href="">IAS</a>
+                                </li>
+                                <li>
+                                    <a href="">IPS</a>
+                                </li>
+                            </ul>
+                        </div>
 
-                <ul class="navbar-nav main-nav-auth-profile-wrap justify-content-end mt-2 mt-lg-0 flex-grow-1">
-
+                    </li>
                     <li class="nav-item dropdown mini-cart-item">
                         {!! view_template_part('template-part.minicart') !!}
                     </li>
 
                     @if (Auth::guest())
                         <li class="nav-item mr-2 ml-2">
-                            <a class="nav-link btn btn-login-outline" href="{{route('login')}}"> <i class="la la-sign-in"></i> {{__t('login')}}</a>
+                            <a class="nav-link btn btn-login-outline login-btn" href="{{route('login')}}"> <i class="fa fa-sign-in"></i> Login / Signup</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-theme-primary" href="{{route('register')}}"> <i class="la la-user-plus"></i> {{__t('signup')}}</a>
-                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link btn btn-theme-primary signup-btn" href="{{route('register')}}"> <i class="la la-user-plus"></i> {{__t('signup')}}</a>
+                        </li> -->
                     @else
                         <li class="nav-item main-nav-right-menu nav-item-user-profile">
                             <a class="nav-link profile-dropdown-toogle" href="javascript:;">

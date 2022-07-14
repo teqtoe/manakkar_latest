@@ -1194,6 +1194,7 @@
 #61 C:\\xampp\\htdocs\\manakkar_latest\\public\\index.php(78): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #62 {main}
 "} 
+<<<<<<< HEAD
 [2022-07-12 22:38:42] local.ERROR: Undefined variable: logoUrl (View: C:\xampp\htdocs\manakkar_latest\public\themes\edugator\footer.blade.php) {"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined variable: logoUrl (View: C:\\xampp\\htdocs\\manakkar_latest\\public\\themes\\edugator\\footer.blade.php) at C:\\xampp\\htdocs\\manakkar_latest\\public/themes/edugator/footer.blade.php:13)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\manakkar_latest\\public/themes/edugator/footer.blade.php(13): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 12, Array)
@@ -1438,3 +1439,5 @@
 #49 C:\\xampp\\htdocs\\manakkar_latest\\public\\index.php(78): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #50 {main}
 "} 
+=======
+>>>>>>> 301f517c94c40d2fab33796309f20522d9e61199

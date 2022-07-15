@@ -10,7 +10,7 @@
                     <div class="footer-widget-wrap">
                         <h4>About us</h4>
                         <p class="footer-about-us-desc">
-                            teqtoe is a LMS platform that connect Teachers with Students globally. Teachers crate high quality course and present them in super easy way. teqtoe LMS created by <a href="https://themeqx.com" target="_blank">Themeqx</a>
+                            Manakkar is a LMS platform that connect Teachers with Students globally. Teachers crate high quality course and present them in super easy way. Manakkar LMS created by <a href="https://teqtoe.com" target="_blank">Teqtoe</a>
                         </p>
                         <p class="footer-social-icon-wrap">
                             <a href="#"><i class="la la-facebook-square"></i> </a>

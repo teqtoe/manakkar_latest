@@ -1638,7 +1638,7 @@ span.quiz-progress-number.active {
     min-height:150px;
     background: url("../image/inner-bg.jpg") 50%/cover;
     position: relative;
-    padding: 150px 0px;
+    padding: 90px 0px;
 }
 .page-header-wrapper::before {
     content: "";

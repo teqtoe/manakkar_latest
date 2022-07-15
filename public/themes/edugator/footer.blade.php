@@ -25,11 +25,11 @@
                         <h4>Quick Links</h4>
                         <ul class="footer-links">
                             <li><a href="{{route('home')}}">{{__t('home')}}</a> </li>
-                            <li><a href="{{route('dashboard')}}">{{__t('dashboard')}}</a> </li>
+                            <!-- <li><a href="{{route('dashboard')}}">{{__t('dashboard')}}</a> </li> -->
                             <li><a href="{{route('blog')}}">{{__t('blog')}}</a> </li>
                             <li><a href="{{route('post_proxy')}}">{{__t('about_us')}}</a> </li>
                             <li><a href="#">Contact Us</a> </li>
-                            <li><a href="{{route('register')}}">{{__t('signup')}}</a> </li>
+                            <!-- <li><a href="{{route('register')}}">{{__t('signup')}}</a> </li> -->
                         </ul>
 
                     </div>
@@ -50,9 +50,9 @@
                 <div class="col-md-3">
                     <div class="footer-widget-wrap contact-us-widget-wrap">
                         <h4>Contact us</h4>
-                        <p class="footer-cont footer-address"><i class="la la-map-marker"></i> USA, New York 144, Next Avenue, New York</p>
-                        <p class="footer-cont mb-0"><i class="la la-phone"></i> Tel.: +1 234 452 341 55 </p>
-                        <p class="footer-cont mb-0"><i class="la la-envelope"></i> info@demo.com </p>
+                        <p class="footer-cont footer-address"><i class="la la-map-marker"></i> Trichy, Tamil Nadu</p>
+                        <p class="footer-cont mb-0"><i class="la la-phone"></i> +91 98765 43210 </p>
+                        <p class="footer-cont mb-0"><i class="la la-envelope"></i> info@manakkar.com </p>
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@
 
                         <div class="footer-bottom-left d-flex">
                             <!-- <h5 class="text-primary">teqtoe LMS</h5> -->
-                            <span class="">Copyright © 2020 Manakkar | All rights reserved.</span>
+                            <span class="">Copyright © 2021 Manakkar | All rights reserved.</span>
                         </div>
 
                         <!-- <div class="footer-bottom-right flex-grow-1 text-right">

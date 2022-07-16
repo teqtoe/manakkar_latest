@@ -20,7 +20,7 @@
             <div class="progress mb-3">
                 <div class="progress-bar bg-info" style="width: {{$completed_percent}}%"></div>
             </div>
-            <div class="course-progress-percentage text-info d-flex justify-content-between">
+            <div class="course-progress-percentage  d-flex justify-content-between">
                 <p class="m-0">
                 <span class="percentage">
                     {{$completed_percent}}%

@@ -3,8 +3,8 @@
     <div class="login-box">
     <div class="row no-gutters justify-content-center">
 
-        <div class="col-md-6">
-            <img src="themes/edugator/assets/image/front_login.jpg">
+        <div class="col-md-6 login-left-bg">
+            <img src="themes/edugator/assets/image/login-bg.jpg" class="img-fluid display-xs">
         </div>
         <div class="col-md-6">
 
@@ -51,7 +51,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <div class="col-md-8 offset-md-4">
+                                    <div class="col-md-12">
                                         <div class="checkbox">
                                             <label class="d-flex">
                                                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> <span>{{ __('Remember Me') }}</span>
@@ -70,39 +70,43 @@
                                 </div>
                             </form>
 
+                            <div class="text-center my-3">
+                                <span class="badge badge-circle-gray300 text-secondary d-inline-flex align-items-center justify-content-center">or</span>
+                            </div>
+
                             <div class="social-login-wrap mb-4 text-center">
-                                @if(get_option('social_login.facebook.enable'))
-                                    <a href="{{ route('facebook_redirect') }}" class="social-login-item">
-                                        <img src="themes/edugator/assets/image/facebook.png"> Facebook
+
+                                @if(get_option('social_login.google.enable'))
+                                    <a href="{{ route('google_redirect') }}" class="social-login-item d-flex align-items-center justify-content-center">
+                                        <img src="themes/edugator/assets/image/google.png"> <span class="flex-grow-1">Login with Google Account</span>
                                     </a>
                                 @endif
 
-                                @if(get_option('social_login.google.enable'))
-                                    <a href="{{ route('google_redirect') }}" class="social-login-item">
-                                        <img src="themes/edugator/assets/image/google.png"> Google
+                                @if(get_option('social_login.facebook.enable'))
+                                    <a href="{{ route('facebook_redirect') }}" class="social-login-item d-flex align-items-center justify-content-center">
+                                        <img src="themes/edugator/assets/image/facebook.png"> <span class="flex-grow-1"> Facebook</span>
                                     </a>
                                 @endif
 
                                 @if(get_option('social_login.twitter.enable'))
-                                    <a href="{{ route('twitter_redirect') }}" class="social-login-item">
-                                        <span class="hidden-xs"><i class="la la-twitter"></i> Twitter</span>
+                                    <a href="{{ route('twitter_redirect') }}" class="social-login-item d-flex align-items-center justify-content-center">
+                                        <img src="themes/edugator/assets/image/twitter.png"> <span class="flex-grow-1"> Twitter</span><!-- <span class="hidden-xs"></span> -->
                                     </a>
                                 @endif
 
                                 @if(get_option('social_login.linkedin.enable'))
 
                                     @if(get_option('social_login.twitter.enable'))
-                                        <a href="{{ route('linkedin_redirect') }}" class="social-login-item">
-                                            <span class="hidden-xs"><i class="la la-linkedin-square"></i> LinkedIn</span>
+                                        <a href="{{ route('linkedin_redirect') }}" class="social-login-item d-flex align-items-center justify-content-center">
+                                            <img src="themes/edugator/assets/image/linkedin.png"> <span class="flex-grow-1"> LinkedIn</span>
                                         </a>
                                     @endif
                                 @endif
 
-                                <p>
-                                    <a class="btn btn-link" href="{{ route('forgot_password') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                </p>
+                                <a class="btn btn-link forget-pswd" href="{{ route('forgot_password') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+
                                 <div class="mt-20 text-center">
                                     <span>Don't have an account?</span>
                                     <a href="" class="text-secondary font-weight-bold">Signup</a>

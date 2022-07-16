@@ -1,10 +1,10 @@
 
 <div id="course-discussion-wrap">
 
-    <div class="discusion-calltoaction-wrap text-center py-4 bg-dark-blue text-white my-4">
-        <h1><i class="la la-question-circle-o"></i> </h1>
-        <h3>Discussion</h3>
-        <h5>Get answers directory from your instructor <br /> if you have any question about this topic.</h5>
+    <div class="discusion-calltoaction-wrap text-center py-4 bg-primary-grad text-white my-4">
+        <h1><i class="la la-question-circle-o text-white"></i> </h1>
+        <h3 class="text-white">Discussion</h3>
+        <h5 class="text-white">Get answers directory from your instructor <br /> if you have any question about this topic.</h5>
     </div>
 
     <div class="discussion-ask-question-form bg-light my-4 p-4">

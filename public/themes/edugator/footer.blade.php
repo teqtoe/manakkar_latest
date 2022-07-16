@@ -115,6 +115,9 @@
 <!--Teqtoe-->
 <script src="{{asset('themes/edugator/assets/js/jquery.min.js')}}"></script>
 <script src="{{asset('themes/edugator/assets/js/slick.min.js')}}"></script>
+
+
+
 @yield('page-js')
 
 <!-- main js -->

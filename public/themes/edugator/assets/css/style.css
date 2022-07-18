@@ -1429,10 +1429,10 @@ END Media Manager
 }
 .lecture-header-right{
     width: 100%;
-    background: #007200;
+    background: #008390;
 }
 #lecture_complete_button{
-    background: #008390;
+    background: #007200;
 }
 button.nav-icon-complete-course {
     height: 100%;
@@ -1662,7 +1662,7 @@ span.quiz-progress-number.active {
     min-height:150px;
     background: url("../image/inner-bg.jpg") 50%/cover;
     position: relative;
-    padding: 150px 0px;
+    padding: 100px 0px;
 }
 .page-header-wrapper::before {
     content: "";
@@ -2623,6 +2623,8 @@ Teqtoe
 
 
 .course-filter-wrap{
+    position: sticky;
+    top: 0;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,.05)!important;
     border-radius: 0.625rem!important;
     border: 1px solid #ececec!important;

@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="page-header-wrapper bg-light-sky py-4">
+    <div class="page-header-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -19,10 +19,20 @@
                                 </a>
                             </li>
 
-                            <li class='breadcrumb-item active'>{{__t('topics')}}</li>
+                            <li class='breadcrumb-item active'>{{__t('categories')}}</li>
                         </ol>
                     </nav>
-                    <h1 class="mb-3">{{__t('topics')}}</h1>
+                    <h1 class="mb-3 text-white text-center">{{__t('categories')}}</h1>
+                     <div class="header-search-wrap my-2 my-lg-0  ml-2">
+                            <form action="{{route('courses')}}" class=" cours-search" method="get">
+                                <div class="input-group">
+                                    <input class="form-control" type="search" name="q" value="{{request('q')}}" placeholder="What do you want to learn today?">
+                                    <div class="input-group-append">
+                                        <button class="btn my-2 my-sm-0 header-search-btn" type="submit">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                 </div>
             </div>
         </div>

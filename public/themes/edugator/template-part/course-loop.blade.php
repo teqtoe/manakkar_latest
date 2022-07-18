@@ -1,5 +1,5 @@
 <?php
-$gridClass = $grid_class ? $grid_class : 'col-md-3';
+$gridClass = $grid_class ? $grid_class : 'col-md-2';
 ?>
 
 <div class="col-sm-12 col-md-6 course-card-grid-wrap ">

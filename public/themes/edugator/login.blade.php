@@ -109,7 +109,7 @@
 
                                 <div class="mt-20 text-center">
                                     <span>Don't have an account?</span>
-                                    <a href="" class="text-secondary font-weight-bold">Signup</a>
+                                    <a href="{{ route('register') }}" class="text-secondary font-weight-bold">Signup</a>
                                 </div>
 
                             </div>

@@ -92,7 +92,7 @@
                                         </select>
 
                                     </div>
-<!-- 
+
                                     <div class="form-group">
                                         <h4 class="mb-3">{{__t('topic')}} <span class="show-loader"></span> </h4>
 
@@ -106,7 +106,7 @@
                                             @endforeach
                                         </select>
 
-                                    </div> -->
+                                    </div>
                                 </div>
                             @endif
 
@@ -140,7 +140,7 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="course-filter-form-group">
+                            <div class="course-filter-form-group">
                                 <div class="form-group">
                                     <h4 class="mb-3">{{__t('ratings')}}</h4>
                                     <div class="filter-form-by-rating-field-wrap">
@@ -173,10 +173,10 @@
 
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
 
 
-                            <!-- <div class="course-filter-form-group">
+                            <div class="course-filter-form-group">
                                 <div class="form-group">
                                     <h4 class="mb-3">{{__t('video_duration')}}</h4>
 
@@ -202,7 +202,7 @@
                                     </label>
 
                                 </div>
-                            </div> -->
+                            </div>
 
 
 

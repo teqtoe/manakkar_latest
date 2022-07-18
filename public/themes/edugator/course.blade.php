@@ -37,6 +37,8 @@
     </div>
 
 
+<div class="course-page">
+
     <div class="container my-5">
 
         <div class="row">
@@ -325,6 +327,8 @@
 
                     <div class="page-header-right-enroll-box p-3 mt-sm-4 mt-md-0 bg-white shadow">
 
+
+
                         @if($course->video_info())
                             @include(theme('video-player'), ['model' => $course])
                         @else
@@ -468,6 +472,6 @@
 
     </div>
 
-
+</div>
 
 @endsection

@@ -34,7 +34,8 @@
 
         <div class="mini-cart-total-wrap p-3">
             <p class="minicart-total-price">
-                Total : <strong>{!! price_format($cart->total_price) !!}</strong>
+                Total : 
+                <strong>{!! price_format($cart->total_price) !!}</strong>
 
                 @if($cart->total_original_price > 0)
                     <small><s>{!! price_format($cart->total_original_price) !!}</s></small>

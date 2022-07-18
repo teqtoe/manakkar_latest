@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-md-8">
+                    <div class="col-md-7">
 
                         <div class="section-order-summery-wrap mb-5">
                             <h4 class="mb-4">{{__t('order_summery')}}</h4>
@@ -43,10 +43,10 @@
                                     @if($cart->enable_charge_fees)
 
                                         <div class="order-summery-fees-wrap d-flex border-bottom mb-3 pb-3">
-                                            <h5 class="flex-grow-1">
+                                            <p class="flex-grow-1">
                                                 {!! $cart->fees_name !!}
                                                 ({!! $cart->fees_type === 'percent' ? $cart->fees_amount.'%' : '' !!})
-                                            </h5>
+                                            </p>
                                             <strong>+ {!! price_format($cart->fees_total) !!}</strong>
                                         </div>
 
@@ -54,47 +54,58 @@
 
                                     <div class="order-summery-total-wrap d-flex">
                                         <h5 class="flex-grow-1">{{__t('total')}}</h5>
-                                        <strong>{!! price_format($cart->total_amount) !!}</strong>
+                                        <strong class="total">{!! price_format($cart->total_amount) !!}</strong>
                                     </div>
                                 @endif
                             </div>
 
                         </div>
 
-
-                        <div class="section-account-information-wrap mb-5">
-                            <h4>{{__t('account_information')}}</h4>
-
-                            <div class="checkout-section order-account-information-wrap bg-white p-4 mt-3">
-                                <p class="checkout-logged-email d-flex">
-                                    <i class="la la-user"></i>
-
-                                    <span class="mr-2"> {{__t('logged_in_as')}} </span>
-                                    <strong class="flex-grow-1">{{$auth_user->name}}</strong>
-
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <i class="la la-sign-out"></i> {{__t('logout')}}
-                                    </a>
-                                </p>
-
-                                <p class="checkout-logged-email">
-                                    <i class="la la-envelope"></i> {{__t('email')}} <strong>{{$auth_user->email}}</strong>
-                                </p>
-                            </div>
-                        </div>
-
                         @include(theme('template-part.gateways.available-gateways'))
 
-                        <div class="checkout-agreement-wrap mt-4 text-center text-muted">
-                            <p class="agreement-text"> {{__t('agreement_text')}} <br />
+                        <div class="checkout-agreement-wrap mt-4 text-left text-muted">
+                            <p class="agreement-text"> {{__t('agreement_text')}} 
                                 <strong>{{get_option('site_name')}}'s</strong>
                                 <a href="{{route('post_proxy', get_option('terms_of_use_page'))}}">
                                     {{__t('terms_of_use')}}
                                 </a> &amp; <a href="{{route('post_proxy', get_option('privacy_policy_page'))}}">
                                     {{__t('privacy_policy')}}
-                                </a>
+                                </a>.
                             </p>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-5">
+
+
+                        <div class="section-account-information-wrap mb-5">
+                            <h4>{{__t('account_information')}}</h4>
+
+                            <div class="checkout-section order-account-information-wrap bg-white p-4 mt-3">
+
+
+                                <p class="checkout-logged-email d-flex">
+                                    <i class="la la-user"></i>
+
+                                    <span class="mr-2"> {{__t('logged_in_as')}} </span>
+                                    <strong class="flex-grow-1">{{$auth_user->name}}</strong>
+                                </p>
+
+                                <p class="checkout-logged-email">
+                                    <i class="la la-envelope"></i> {{__t('email')}} <strong class="flex-grow-1">{{$auth_user->email}}</strong>
+                                </p>
+                                <p class="text-right">
+
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="la la-sign-out"></i><strong>{{__t('logout')}}</strong> 
+                                    </a>
+
+                                </p>
+                            </div>
                         </div>
 
                     </div>

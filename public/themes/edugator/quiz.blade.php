@@ -181,7 +181,7 @@
                                                     </p>
 
                                                     <p class="mt-3">
-                                                        {{$answer->question->title}}
+                                                        <strong>{{$answer->question->title}}</strong>
                                                     </p>
 
                                                     <h4 class="text-muted">Answer</h4>

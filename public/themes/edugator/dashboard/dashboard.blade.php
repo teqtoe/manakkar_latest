@@ -64,7 +64,7 @@
     @if($purchases->count() > 0)
         <h4 class="my-4"> {{sprintf(__t('my_last_purchases'), $purchases->count())}} </h4>
 
-        <table class="table purchase-table">
+        <table class="table purchase-table table-responsive">
 
             <tr>
                 <th>Purchase ID</th>

@@ -40,11 +40,11 @@
     <div class="my-4">
 
         @if($payment->courses->count() > 0)
-            <table class="table purchase-table">
+            <table class="table purchase-table table purchase-table">
 
                 <tr>
-                    <th>{{__t('thumbnail')}}</th>
-                    <th>{{__t('title')}}</th>
+                    <!-- <th>{{__t('thumbnail')}}</th> -->
+                    <th colspan="2">{{__t('title')}}</th>
                     <th>{{__t('price')}}</th>
                     <th>#</th>
                 </tr>
@@ -52,7 +52,7 @@
                 @foreach($payment->courses as $course)
                     <tr>
                         <td>
-                            <img src="{{$course->thumbnail_url}}" width="80" />
+                            <img src="{{$course->thumbnail_url}}" width="150" />
                         </td>
                         <td>
                             <p class="mb-3">

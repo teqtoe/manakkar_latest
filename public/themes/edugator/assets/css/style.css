@@ -728,6 +728,7 @@ Home popular courses
 }
 .dashboard-wrap{
     background-color: #f8f8f8;
+    position: relative;
 }
 .dashboard-menu-col{
     /*border-right: 1px solid #dedfe0;*/
@@ -740,9 +741,9 @@ Home popular courses
     box-shadow: 18px 0 35px 0 rgb(0 0 0 / 2%);
     background-color: #fff;
 }
-.dashboard-menu{
+/*.dashboard-menu{
     padding-top: 70px;
-}
+}*/
 .dashboard-menu:not(.dropdown-menu .dashboard-menu){
     /*margin-right: -15px;*/
 }
@@ -2881,7 +2882,7 @@ input[type=checkbox], input[type=radio]{
 
 .badge{
     padding: 6px 8px;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
 }
 
 .order-summery-total-wrap .total{
@@ -2943,6 +2944,9 @@ input[type=checkbox], input[type=radio]{
     color: #007200;
 }
 .table.purchase-table{
+    width: 100%;
+}
+.table.purchase-table{
     background: #ffffff;
     border-top: none;
     border-radius: 15px;
@@ -2959,7 +2963,7 @@ input[type=checkbox], input[type=radio]{
     background: transparent;
     font-size: 15px;
 }
-.dashboard-content .my-review, .quiz-attempt-time-wrap, .view-attempted-answer, .profile-basic-info, .social-info{
+.dashboard-content .my-review, .quiz-attempt-time-wrap, .view-attempted-answer, .profile-basic-info, .social-info, .enrolled-courses{
     box-shadow: 0 12px 23px 0 rgb(62 73 84 / 4%);
     border-radius: 0.625rem!important;
     background-color: #fff!important;
@@ -2967,6 +2971,20 @@ input[type=checkbox], input[type=radio]{
 
 .border-radius{
      border-radius: 0.625rem!important;   
+}
+
+.enrolled-courses img{    
+     border-radius: 0.625rem 0 0 0.625rem!important;
+}
+
+.enrolled-courses-content{
+    margin: 20px 20px;
+}
+.enrolled-courses-content .current-price{
+    font-size: 28px;
+}
+.enrolled-courses-content .view-icon-btn{
+    font-size: 25px;
 }
 
 
@@ -3012,6 +3030,9 @@ input[type=checkbox], input[type=radio]{
     }
     .reviews-list-wrap .single-review .reviewed-user{
             display: block !important;
+    }
+    .dashboard-menu-col{
+        position: inherit;
     }
 }
 

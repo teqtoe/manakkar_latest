@@ -1,5 +1,16 @@
 <ul class="dashboard-menu">
 
+            <a class="navbar-brand site-main-logo my-4" href="{{route('home')}}">
+                @php
+                    $logoUrl = media_file_uri(get_option('site_logo'));
+                @endphp
+
+                @if($logoUrl)
+                    <img src="{{media_file_uri(get_option('site_logo'))}}" alt="{{get_option('site_title')}}" />
+                @else
+                    <img src="{{asset('assets/images/teqtoe-lms-logo.svg')}}" alt="{{get_option('site_title')}}" />
+                @endif
+            </a>
                     @if (Auth::guest())
                         <li class="nav-item mr-2 ml-2">
                             <a class="nav-link btn btn-login-outline login-btn" href="{{route('login')}}"> <i class="fa fa-sign-in"></i> Login / Signup</a>

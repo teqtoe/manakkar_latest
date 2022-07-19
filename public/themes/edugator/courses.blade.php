@@ -47,7 +47,7 @@
     </div>
 
 
-    <div class="courses-container-wrap my-5">
+    <div class="courses-container-wrap bg-white py-5">
 
         <form action="" id="course-filter-form" method="get">
 

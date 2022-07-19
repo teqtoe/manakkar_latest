@@ -13,7 +13,7 @@
 
     <div class="row">
         <div class="col-lg-4 col-md-6">
-            <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
+            <div class="dashboard-card mb-3 d-flex p-3">
                 <div class="card-icon mr-2">
                     <span><i class="la la-user"></i> </span>
                 </div>
@@ -26,8 +26,8 @@
         </div>
 
         <div class="col-lg-4 col-md-6">
-            <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
-                <div class="card-icon mr-2">
+            <div class="dashboard-card mb-3 d-flex p-3">
+                <div class="card-icon icon1 mr-2">
                     <span><i class="la la-heart"></i> </span>
                 </div>
 
@@ -39,8 +39,8 @@
         </div>
 
         <div class="col-lg-4 col-md-6">
-            <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
-                <div class="card-icon mr-2">
+            <div class="dashboard-card mb-3 d-flex p-3">
+                <div class="card-icon icon2 mr-2">
                     <span><i class="la la-star-half-alt"></i> </span>
                 </div>
 
@@ -64,10 +64,10 @@
     @if($purchases->count() > 0)
         <h4 class="my-4"> {{sprintf(__t('my_last_purchases'), $purchases->count())}} </h4>
 
-        <table class="table table-striped table-bordered">
+        <table class="table purchase-table">
 
             <tr>
-                <th>#</th>
+                <th>Purchase ID</th>
                 <th>{{__a('amount')}}</th>
                 <th>{{__a('method')}}</th>
                 <th>{{__a('time')}}</th>
@@ -77,19 +77,16 @@
 
             @foreach($purchases as $purchase)
                 <tr>
-                    <td>
-                        <small class="text-muted">#{{$purchase->id}}</small>
+                    <td class="pl-5">
+                        <small>#{{$purchase->id}}</small>
                     </td>
-                    <td>
-                        {!!price_format($purchase->amount)!!}
+                    <td class="text-primary">
+                        <strong>{!!price_format($purchase->amount)!!}</strong>
                     </td>
                     <td>{!!ucwords(str_replace('_', ' ', $purchase->payment_method))!!}</td>
 
                     <td>
-                        <small>
-                            {!!$purchase->created_at->format(get_option('date_format'))!!} <br />
-                            {!!$purchase->created_at->format(get_option('time_format'))!!}
-                        </small>
+                        {!!$purchase->created_at->format(get_option('date_format'))!!}  |                         {!!$purchase->created_at->format(get_option('time_format'))!!}
                     </td>
 
                     <td>

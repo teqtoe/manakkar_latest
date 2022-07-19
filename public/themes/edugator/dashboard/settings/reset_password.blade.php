@@ -14,7 +14,7 @@
         <form action="{{route('profile_reset_password')}}" method="post">
             @csrf
 
-            <div class="profile-basic-info bg-white p-3">
+            <div class="profile-basic-info bg-white p-5">
 
                 <div class="form-row">
                     <div class="form-group col-md-12 {{form_error($errors, 'old_password')->class}}">
@@ -41,7 +41,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-purple btn-lg"> Update Profile</button>
+                <button type="submit" class="btn btn-primary btn-lg"> Update Profile</button>
 
 
             </div>

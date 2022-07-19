@@ -16,6 +16,7 @@ body{
     line-height: 28px;
     color: #29303b;
     -webkit-font-smoothing: antialiased;
+    background-color: #f8f8f8;
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Rubik', sans-serif;
@@ -146,6 +147,7 @@ ul{
 }
 .navbar{
     padding: 10px 0 !important;
+    background: #ffff;
 }
 .site-main-logo img{
     height: 50px;
@@ -383,7 +385,9 @@ a#miniCartDropDown:hover, a.profile-dropdown-toogle:hover {
 * #END Nav Menu
 */
 
-
+.course-page{
+    background: #ffffff !important;
+}
 
 /**
 Hero Section
@@ -713,7 +717,7 @@ Home popular courses
 }
 
 .stripe-credit-card-form-wrap{
-    max-width: 400px;
+    max-width: 400px;.dashboard-menu li.active a
 }
 
 /**
@@ -723,28 +727,48 @@ Home popular courses
     width: 100%; height: 400px;
 }
 .dashboard-wrap{
-    background-color: #f6f7f2;
+    background-color: #f8f8f8;
 }
 .dashboard-menu-col{
-    border-right: 1px solid #dedfe0;
+    /*border-right: 1px solid #dedfe0;*/
+    position: fixed;
+    top: 0px;
+    left: 0;
+    bottom: 0;
+    width: 254px;
+    height: 100%;
+    box-shadow: 18px 0 35px 0 rgb(0 0 0 / 2%);
+    background-color: #fff;
+}
+.dashboard-menu{
+    padding-top: 70px;
 }
 .dashboard-menu:not(.dropdown-menu .dashboard-menu){
-    margin-right: -15px;
+    /*margin-right: -15px;*/
 }
 .dashboard-menu li a{
-    padding: 10px;
+    padding: 8px 10px;
     display: block;
+    color: #002f36;
+    font-size: 14px;
+}
+.dashboard-menu li a i{
+    font-size: 25px;
 }
 .dashboard-menu li a:hover{
     background-color: #edf0f9;
 }
 .dashboard-menu li.active a{
-    color: #ffffff;
-    background-color: var(--btn-theme-primary-bg);
+    color: #0092c6;
+    font-weight: 700;
+    /*background-color: var(--btn-theme-primary-bg);*/
 }
 .dashboard-menu li.active a:hover{
-    color: #ffffff;
-    background-color: var(--btn-theme-primary-hover-bg);
+    color: #0092c6;
+    /*background-color: var(--btn-theme-primary-hover-bg);*/
+}
+.dashboard-content{
+    padding: 30px 25px;
 }
 .dashboard-section-header{
     background-color: #eeeeee;
@@ -752,8 +776,34 @@ Home popular courses
 .dashboard-section-header i{
     line-height: 1.6;
 }
+.dashboard-card{
+    align-items: center;
+    box-shadow: 0 12px 23px 0 rgb(62 73 84 / 4%);
+    border-radius: 0.625rem!important;
+    background-color: #fff!important;
+}
+.dashboard-card .card-icon{
+    width: 70px;
+    min-width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #009700 0%,#00b9cc 100%);
+}
+.dashboard-card .card-icon.icon1{
+    background: linear-gradient(135deg,#3c8ce7 10%,#00eaff);
+}
+.dashboard-card .card-icon.icon2{
+    background-image: linear-gradient(135deg,#f761a1 10%,#8c1bab);
+}
+.dashboard-card .card-info h4{
+    margin-bottom: 0;
+}
 .dashboard-card .card-icon i{
     font-size: 42px;
+    color: #ffffff
 }
 .course-edit-nav a{
     color: #444444;
@@ -1429,17 +1479,13 @@ END Media Manager
 }
 .lecture-header-right{
     width: 100%;
-<<<<<<< HEAD
-    background: #008390;
+    background: #007200;
 }
 #lecture_complete_button{
-    background: #007200;
-=======
     background: #007200;
 }
 #lecture_complete_button{
     background: #008390;
->>>>>>> f27a5519cf9c74ab4a7f386f28c83cc6f4b2d937
 }
 button.nav-icon-complete-course {
     height: 100%;
@@ -1487,12 +1533,12 @@ button.nav-icon-complete-course {
 }
 .lecture-sidebar{
     width: 350px;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     border-right: 1px solid #d7dadb;
     position: fixed;
     height: 100% !important;
     overflow: scroll !important;
-    padding-bottom: 120px;
+    padding-bottom: 100px;
     z-index: 9;
 }
 .lecture-sidebar-course-title{
@@ -1500,7 +1546,7 @@ button.nav-icon-complete-course {
     font-weight: 400
 }
 .lecture-sidebar-curriculum-wrap .section-item-title a{
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 .sidebar-section-item.completed .section-item-title a{
     color: #666666;
@@ -1510,7 +1556,7 @@ button.nav-icon-complete-course {
 }
 .lecture-container{
     margin-left: 350px;
-    background: #fff;
+    /*background: #fff;*/
     padding: 40px;
     height: auto;
     width: 100%;
@@ -2878,6 +2924,51 @@ input[type=checkbox], input[type=radio]{
 .lecture-sidebar::-webkit-scrollbar-thumb:hover {
   background: #008390; 
 }
+
+.top-nav-user-name{
+    text-align: center;
+}
+.top-nav-user-name.profile img{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 100px;
+    display: flex;
+}
+
+.auth-name{
+    font-size: 18px;
+    font-weight: 700;
+    color: #007200;
+}
+.table.purchase-table{
+    background: #ffffff;
+    border-top: none;
+    border-radius: 15px;
+}
+.table.purchase-table  td, .table.purchase-table th{
+    border-top: none!important;
+    padding: 18px;
+}
+.table.purchase-table th{
+    padding: 25px;
+}
+.table.purchase-table .badge-success{
+    color: #28a745;
+    background: transparent;
+    font-size: 15px;
+}
+.dashboard-content .my-review, .quiz-attempt-time-wrap, .view-attempted-answer, .profile-basic-info, .social-info{
+    box-shadow: 0 12px 23px 0 rgb(62 73 84 / 4%);
+    border-radius: 0.625rem!important;
+    background-color: #fff!important;
+}
+
+.border-radius{
+     border-radius: 0.625rem!important;   
+}
+
 
 /*______________________________________________________________________*/
 

@@ -47,7 +47,7 @@
                         @endif
 
                         @if($attempt->status === 'in_review')
-                            <div class="bg-light-sky p-4 border d-flex quiz-submitted-alert">
+                            <div class="bg-light-sky p-4  d-flex quiz-submitted-alert">
                                 <h1 class="mr-3">
                                     <i class="la la-info-circle"></i>
                                 </h1>
@@ -60,7 +60,7 @@
 
                         @if($attempt->status === 'finished')
 
-                            <div class="quiz-attempt-time-wrap bg-white p-2 border mb-3">
+                            <div class="quiz-attempt-time-wrap bg-white p-2  mb-3">
                                 <p class="mb-0">
                                     <strong><i class="la la-clock"></i> Start time:</strong> {{$attempt->created_at->format(date_time_format())}},
                                     <strong><i class="la la-clock"></i> End time:</strong> {{$attempt->ended_at->format(date_time_format())}},
@@ -137,13 +137,13 @@
 
                             <div class="quiz-result-gretings">
                                 @if($attempt->passed)
-                                    <div class="bg-success text-white p-3 border text-center">
+                                    <div class="bg-primary-grad text-white p-3 -radius text-center">
                                         <span class="greetings-icon"><i class="la la-trophy"></i> </span>
-                                        <h2>Congratulations</h2>
-                                        <h3 class="mb-3">You passed with <strong>{{$passing_score}} ({{$passing_percent}}%)</strong> Score</h3>
+                                        <h2 class="text-white">Congratulations</h2>
+                                        <h3 class="mb-3 text-white">You passed with <strong>{{$passing_score}} ({{$passing_percent}}%)</strong> Score</h3>
                                     </div>
                                 @else
-                                    <div class="bg-warning p-3 border text-center">
+                                    <div class="bg-warning p-3  text-center">
                                         <span class="greetings-icon"><i class="la la-exclamation-circle"></i> </span>
                                         <h2>Failed</h2>
                                         <h3 class="mb-3">Unfortunately, you could not passed at this time.</h3>
@@ -169,7 +169,7 @@
 
 
                                             <div class="col-md-6">
-                                                <div class="view-attempted-answer border p-3 mb-3">
+                                                <div class="view-attempted-answer  p-3 mb-3">
 
                                                     <p class="text-success mb-0">
                                                         <span class="badge badge-info mr-3"> <i class="la la-question-{{$qtype}}"></i> {{$qtype}}</span>

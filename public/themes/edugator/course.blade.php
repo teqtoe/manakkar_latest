@@ -39,7 +39,7 @@
 
 <div class="course-page">
 
-    <div class="container my-5">
+    <div class="container py-5">
 
         <div class="row">
             <div class="col-md-8  order-xs-2"> <!-- offset-md-1 -->

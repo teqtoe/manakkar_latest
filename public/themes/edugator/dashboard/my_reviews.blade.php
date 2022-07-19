@@ -8,7 +8,7 @@
 
     @if($reviews->count())
         @foreach($reviews as $review)
-            <div class="my-review p-4 mb-3 bg-white border">
+            <div class="my-review p-4 mb-3">
                 <a href="{{route('review', $review->id)}}" class="text-muted mb-3 d-block" >{{$review->created_at->diffForHumans()}}</a>
 
                 <a href="{{route('course', $review->course->id)}}" class="mb-3 d-block">{{$review->course->title}}</a>

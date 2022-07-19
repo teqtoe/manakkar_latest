@@ -7,9 +7,11 @@
     @endphp
 
     @if($purchases->count() > 0)
-        <p class="text-muted my-3"> <small>Showing {{$purchases->count()}} from {{$purchases->total()}} results</small> </p>
+        <!-- <p class="text-muted my-3"> <small>Showing {{$purchases->count()}} from {{$purchases->total()}} results</small> </p> -->
 
-        <table class="table table-striped table-bordered">
+        <h2 class="mb-4">My purchases</h2>
+
+        <table class="table purchase-table">
 
             <tr>
                 <th>#</th>
@@ -25,16 +27,14 @@
                     <td>
                         <small class="text-muted">#{{$purchase->id}}</small>
                     </td>
-                    <td>
-                        {!!price_format($purchase->amount)!!}
+                    <td class="text-primary">
+                        <strong>{!!price_format($purchase->amount)!!}</strong>
                     </td>
                     <td>{!!ucwords(str_replace('_', ' ', $purchase->payment_method))!!}</td>
 
                     <td>
-                        <small>
-                            {!!$purchase->created_at->format(get_option('date_format'))!!} <br />
-                            {!!$purchase->created_at->format(get_option('time_format'))!!}
-                        </small>
+                        {!!$purchase->created_at->format(get_option('date_format'))!!} |
+                        {!!$purchase->created_at->format(get_option('time_format'))!!}
                     </td>
 
                     <td>

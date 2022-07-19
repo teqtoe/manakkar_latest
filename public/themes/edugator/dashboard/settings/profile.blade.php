@@ -21,7 +21,7 @@
             @endphp
 
 
-            <div class="profile-basic-info bg-white p-3">
+            <div class="profile-basic-info p-5">
 
                 <div class="form-row">
                     <div class="form-group col-md-6 {{ $errors->has('name') ? ' has-error' : '' }}">
@@ -93,8 +93,9 @@
             </div>
 
 
-            <h4 class="my-4">Social Link </h4>
 
+        <h4 class="mt-5 mb-3">Social Link </h4>
+        <div class="social-info p-5">
 
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -128,9 +129,9 @@
 
 
 
-            <button type="submit" class="btn btn-purple btn-lg"> Update Profile</button>
+            <button type="submit" class="btn btn-primary btn-lg"> Update Profile</button>
         </form>
-
+    </div>
 
     </div>
 

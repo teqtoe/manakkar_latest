@@ -6,7 +6,7 @@
 
         <h4 class="mb-4">Purchase Details</h4>
 
-        <table class="table table-striped table-bordered table-sm">
+        <table class="table table-striped table-bordered">
 
             @php
             $cols = $payment->toArray();
@@ -40,7 +40,7 @@
     <div class="my-4">
 
         @if($payment->courses->count() > 0)
-            <table class="table table-bordered bg-white">
+            <table class="table purchase-table">
 
                 <tr>
                     <th>{{__t('thumbnail')}}</th>

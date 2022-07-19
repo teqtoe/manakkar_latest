@@ -45,7 +45,7 @@
 
             @foreach($course->sections as $section)
 
-                <div id="course-section-{{$section->id}}" class="course-course-section mb-4">
+                <div id="course-section-{{$section->id}}" class="course-course-section">
 
                     <div class="section-header p-2 border-bottom d-flex">
                     <span class="section-name flex-grow-1 ml-2 d-flex">

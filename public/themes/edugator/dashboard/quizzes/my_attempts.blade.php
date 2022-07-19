@@ -9,7 +9,7 @@
 
     @if( $attempts->count())
 
-        <table class="table table-bordered bg-white table-striped">
+        <table class="table purchase-table">
 
             <tr>
                 <th>#</th>

@@ -2,7 +2,7 @@
 /*#f3be00*/
 :root{
     --nav-item-color: #191919;
-    --a-color : #216094;
+    --a-color : #0092c6;
     --a-hover-color : #218ff6;
 
     --btn-theme-primary-bg : #2073d4;
@@ -731,13 +731,13 @@ Home popular courses
     position: relative;
 }
 .dashboard-menu-col{
-    /*border-right: 1px solid #dedfe0;*/
-    position: fixed;
+    position: sticky;
     top: 0px;
     left: 0;
     bottom: 0;
-    width: 254px;
-    height: 100%;
+    min-height: 100vh;
+    /*width: 254px;*/
+    /*height: 100%;*/
     box-shadow: 18px 0 35px 0 rgb(0 0 0 / 2%);
     background-color: #fff;
 }
@@ -769,6 +769,7 @@ Home popular courses
     /*background-color: var(--btn-theme-primary-hover-bg);*/
 }
 .dashboard-content{
+    position: relative;
     padding: 30px 25px;
 }
 .dashboard-section-header{
@@ -779,9 +780,10 @@ Home popular courses
 }
 .dashboard-card{
     align-items: center;
-    box-shadow: 0 12px 23px 0 rgb(62 73 84 / 4%);
+    box-shadow: 0 7px 10px 0 rgb(62 73 84 / 4%);
     border-radius: 0.625rem!important;
     background-color: #fff!important;
+    border: none;
 }
 .dashboard-card .card-icon{
     width: 70px;
@@ -905,9 +907,9 @@ textarea#benefits, textarea#requirements {
     padding-bottom: 7px;
 }
 .report-top-sub-menu a.active {
-    background-color: var(--a-hover-color);
+    background-color: var(--a-color);
     color: #ffffff;
-    border: 1px solid var(--a-hover-color);
+    border: 1px solid var(--a-color);
 }
 .report-filter-date-range-wrap input, .report-filter-date-range-wrap .btn, .report-filter-date-range-wrap .input-group-text{
     border-radius: 0;
@@ -1196,7 +1198,8 @@ img#mediaManagerPreviewScreen {
     word-wrap: break-word;
 }
 .image-wrap .img-thumbnail{
-    max-width: 80px;
+    max-width: 150px;
+    /*border-radius: 50%;*/
 }
 #modal-filemanager .card {
     height: 147px;
@@ -1452,14 +1455,17 @@ END Media Manager
     margin-right: 20px;
 }
 .reviewed-user-photo img, .profile-text-photo{
-    width: 48px;
-    height: 48px;
-    line-height: 46px;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
     border-radius: 50%;
     display: block;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 .reviews-list-wrap .single-review{
     border: 1px solid #e8eff1;
@@ -2452,6 +2458,21 @@ Teqtoe
 
 /*Common*/
 
+.box-shadow{
+    box-shadow: 0 7px 10px 0 rgb(62 73 84 / 4%);
+}
+.border-radius{
+     border-radius: 0.625rem!important;   
+}
+.border-none{
+    border: none!important;
+}
+.small, small{
+    line-height: 18px;
+}
+textarea.form-control {
+    height: 100px;
+}
 .section-subtitle{
     font-size: 18px;
 }
@@ -2718,6 +2739,7 @@ Teqtoe
     padding: 10px 10px;
     height: 45px;
     font-size: 14px;
+    width: 100%
 }
 .custom-control-label::before{
     top: 1px;
@@ -2958,33 +2980,125 @@ input[type=checkbox], input[type=radio]{
 .table.purchase-table th{
     padding: 25px;
 }
+.table.purchase-table .thumbnail{
+    width: 260px;
+}
 .table.purchase-table .badge-success{
     color: #28a745;
     background: transparent;
     font-size: 15px;
 }
+
+.dashboard-menu-box{
+    background: #ffffff;
+    height: 100%;
+}
 .dashboard-content .my-review, .quiz-attempt-time-wrap, .view-attempted-answer, .profile-basic-info, .social-info, .enrolled-courses{
-    box-shadow: 0 12px 23px 0 rgb(62 73 84 / 4%);
+    box-shadow: 0 7px 10px 0 rgb(62 73 84 / 4%);
     border-radius: 0.625rem!important;
     background-color: #fff!important;
 }
-
-.border-radius{
-     border-radius: 0.625rem!important;   
-}
-
 .enrolled-courses img{    
      border-radius: 0.625rem 0 0 0.625rem!important;
+     width: 260px;
 }
 
 .enrolled-courses-content{
-    margin: 20px 20px;
+    margin: 18px 20px;
 }
 .enrolled-courses-content .current-price{
     font-size: 28px;
 }
 .enrolled-courses-content .view-icon-btn{
     font-size: 25px;
+}
+
+/*User Dashboard Mobile Menu*/
+.user_mm{
+    background: #ffffff;
+    padding: 10px 0;
+}
+.user_mm .openbtn{
+    float: right;
+    border: none;
+    background: #fff;
+    font-size: 30px;
+    margin: 18px;
+}
+
+.user_dashboard_mm {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 12px 23px 0 rgb(62 73 84 / 4%);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.user_dashboard_mm a {
+  padding: 4px 4px 4px 25px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #002f36;
+  display: block;
+  transition: 0.3s;
+}
+.user_dashboard_mm a i{
+    font-size: 25px;
+}
+
+.user_dashboard_mm a:hover {
+  color: #222222;
+}
+
+.user_dashboard_mm .closebtn {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 36px;
+}
+
+.user_dashboard_mm .openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.user_dashboard_mm .openbtn:hover {
+  background-color: #444;
+}
+
+.user_mm .logo-img{
+    width: 250px;
+}
+.user_dashboard_mm li{
+    list-style-type: none;
+}
+
+/*#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}*/
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/*@media screen and (max-height: 450px) {
+  .user_dashboard_mm {padding-top: 15px;}
+  .user_dashboard_mm a {font-size: 18px;}
+}*/
+
+.title{
+    font-size: 20px;
+}
+.earning-stats.amount{
+    color: #007200
 }
 
 
@@ -2998,12 +3112,21 @@ input[type=checkbox], input[type=radio]{
     }
 }
 
+@media (min-width: 1026px){
+    .display-md{
+        display: none;
+    }
+}
+
 @media (max-width: 1026px){
     .slick-prev {
         left: 0;
     }
     .slick-next{
         right: 0;
+    }
+    .display-md{
+        display: block;
     }
 }
 
@@ -3032,7 +3155,8 @@ input[type=checkbox], input[type=radio]{
             display: block !important;
     }
     .dashboard-menu-col{
-        position: inherit;
+        /*position: inherit;*/
+        display: none;
     }
 }
 
@@ -3060,6 +3184,10 @@ input[type=checkbox], input[type=radio]{
     }
     .mini-cart-item{
         display: none;
+    }
+    .enrolled-courses img {
+        border-radius: 0.625rem 0.625rem 0 0 !important;
+        width: 100%;
     }
     .display-xs{
         display: block;

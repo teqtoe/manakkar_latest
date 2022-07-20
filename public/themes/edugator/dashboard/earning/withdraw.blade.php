@@ -10,37 +10,37 @@
 
     <div class="row">
         <div class="col-12 col-md-4">
-            <div class="card card-body mb-4">
-                <h6 class="text-muted text-uppercase">Lifetime sales</h6>
+            <div class="card card-body dashboard-card mb-4">
+                <h6 class="title">Lifetime sales</h6>
                 <h4 class="earning-stats amount">{!! price_format($user->earning->sales_amount) !!}</h4>
             </div>
         </div>
 
         <div class="col-12 col-md-4">
-            <div class="card card-body mb-4">
-                <h6 class="text-muted text-uppercase">Lifetime Earnings</h6>
+            <div class="card card-body dashboard-card mb-4">
+                <h6 class="title">Lifetime Earnings</h6>
                 <h4 class="earning-stats amount">{!! price_format($user->earning->earnings) !!}</h4>
             </div>
         </div>
 
         <div class="col-12 col-md-4">
-            <div class="card card-body mb-4">
-                <h6 class="text-muted text-uppercase">Commission Deducted</h6>
+            <div class="card card-body dashboard-card mb-4">
+                <h6 class="title">Commission Deducted</h6>
                 <h4 class="earning-stats amount">{!! price_format($user->earning->commission) !!}</h4>
             </div>
         </div>
 
 
         <div class="col-12 col-md-4">
-            <div class="card card-body mb-4">
-                <h6 class="text-muted text-uppercase">{{__t('withdrawn')}}</h6>
+            <div class="card card-body dashboard-card mb-4">
+                <h6 class="title">{{__t('withdrawn')}}</h6>
                 <h4 class="earning-stats amount">{!! price_format($user->earning->withdrawals) !!}</h4>
             </div>
         </div>
 
         <div class="col-12 col-md-4">
-            <div class="card card-body mb-4">
-                <h6 class="text-muted text-uppercase">Balance</h6>
+            <div class="card card-body dashboard-card mb-4">
+                <h6 class="title">Balance</h6>
                 <h4 class="earning-stats amount">{!! price_format($user->earning->balance) !!}</h4>
             </div>
         </div>

@@ -12,7 +12,7 @@
     @endphp
 
     <div class="row">
-        <div class="col-lg-4 col-md-6">
+        <div class="col-sm-12 col-md-4 col-lg-6 col-xl-4">
             <div class="dashboard-card mb-3 d-flex p-3">
                 <div class="card-icon mr-2">
                     <span><i class="la la-user"></i> </span>
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-sm-12 col-md-4 col-lg-6 col-xl-4">
             <div class="dashboard-card mb-3 d-flex p-3">
                 <div class="card-icon icon1 mr-2">
                     <span><i class="la la-heart"></i> </span>
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-sm-12 col-md-4 col-lg-6 col-xl-4">
             <div class="dashboard-card mb-3 d-flex p-3">
                 <div class="card-icon icon2 mr-2">
                     <span><i class="la la-star-half-alt"></i> </span>
@@ -54,7 +54,7 @@
     </div>
 
     @if($chartData)
-        <div class="p-4 bg-white">
+        <div class="px-4 py-5 bg-white border-radius box-shadow">
             <h4 class="mb-4">My Earning for for the month ({{date('M')}})</h4>
 
             <canvas id="ChartArea"></canvas>
@@ -64,7 +64,7 @@
     @if($purchases->count() > 0)
         <h4 class="my-4"> {{sprintf(__t('my_last_purchases'), $purchases->count())}} </h4>
 
-        <table class="table purchase-table table-responsive">
+        <table class="table purchase-table table-responsive-md">
 
             <tr>
                 <th>Purchase ID</th>

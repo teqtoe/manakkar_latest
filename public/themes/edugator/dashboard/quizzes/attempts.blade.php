@@ -4,7 +4,7 @@
 @section('content')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb bg-white">
             <li class="breadcrumb-item"><a href="{{route('courses_has_quiz')}}">{{__t('courses')}}</a></li>
             <li class="breadcrumb-item"> <a href="{{route('courses_quizzes', $quiz->course_id)}}">{{__t('quizzes')}}</a></li>
             <li class="breadcrumb-item"> <a href="{{route('quiz_attempts', $quiz->id)}}">{{__t('quiz_attempts')}} </a> </li>

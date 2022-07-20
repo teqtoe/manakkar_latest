@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <div class="curriculum-top-nav d-flex bg-white mb-5 p-2 border">
+    <div class="curriculum-top-nav d-flex mb-5">
         <h4 class="flex-grow-1">{{__t('my_courses')}} </h4>
-        <a href="{{route('create_course')}}" class="btn btn-warning">{{__t('create_course')}}</a>
+        <a href="{{route('create_course')}}" class="btn btn-primary">{{__t('create_course')}}</a>
     </div>
 
     @if($auth_user->courses->count())
-        <table class="table table-bordered bg-white">
+        <table class="table purchase-table table-responsive-md">
 
             <tr>
                 <th>{{__t('thumbnail')}}</th>
@@ -19,7 +19,7 @@
             @foreach($auth_user->courses as $course)
                 <tr>
                     <td>
-                        <img src="{{$course->thumbnail_url}}" width="80" />
+                        <img src="{{$course->thumbnail_url}}" class="thumbnail" />
                     </td>
                     <td>
                         <p class="mb-3">

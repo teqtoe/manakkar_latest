@@ -1,8 +1,10 @@
 @extends(theme('dashboard.layout'))
 
 @section('content')
-    <div class="card">
+    <div class="card dashboard-card p-4">
         <div class="card-body">
+
+            <h4 class="flex-grow-1 mb-4">{{__t('New courses')}} </h4>
 
             <form method="post">
                 @csrf
@@ -31,13 +33,6 @@
 
 
                 <div class="form-row my-3">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="requirements">{{__t('course_thumbnail')}}</label>
-                            {!! image_upload_form('thumbnail_id', null, [750,422]) !!}
-                            <small class="form-text text-muted"> {{__t('course_img_guide')}}</small>
-                        </div>
-                    </div>
 
                     <div class="col">
 
@@ -54,7 +49,7 @@
                             <label class="mb-3">{{__t('category')}}</label>
 
                             @if($categories->count())
-                                <select name="category_id" id="course_category" class="form-control select2">
+                                <select name="category_id" id="course_category" class="form-control"><!-- select2 -->
                                     <option value="">{{__t('select_category')}}</option>
                                     @foreach($categories as $category)
                                         <optgroup label="{{$category->category_name}}">
@@ -74,6 +69,67 @@
                             @endif
                         </div>
 
+                        <div class="lecture-video-upload-wrap mb-5">
+                            @php
+                                $videoSrc = old('video_source')
+                            @endphp
+
+                            <label>{{__t('intro_video')}}</label>
+
+                            <select name="video[source]" class="lecture_video_source form-control mb-2">
+                                <option value="-1">Select Video Source</option>
+                                <option value="html5" {{selected($videoSrc, 'html5')}} >HTML5 (mp4)</option>
+                                <option value="external_url" {{selected($videoSrc, 'external_url')}}>External URL</option>
+                                <option value="youtube" {{selected($videoSrc, 'youtube')}}>YouTube</option>
+                                <option value="vimeo" {{selected($videoSrc, 'vimeo')}}>Vimeo</option>
+                                <option value="embedded" {{selected($videoSrc, 'embedded')}}>Embedded</option>
+                            </select>
+
+                            <p class="video-file-type-desc">
+                                <small class="text-muted">Select your preferred video type. (.mp4, YouTube, Vimeo etc.) </small>
+                            </p>
+
+                            <div class="video-source-input-wrap mb-5" style="display: {{$videoSrc? 'block' : 'none'}};">
+
+                                <div class="video-source-item video_source_wrap_html5 border bg-white p-4" style="display: {{$videoSrc == 'html5'? 'block' : 'none'}};">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="video-upload-wrap text-center">
+                                                <i class="la la-cloud-upload text-muted"></i>
+                                                <h5>{{__t('upload_video')}}</h5>
+                                                <p class="mb-2">File Format:  .mp4</p>
+                                                {!! media_upload_form('video[html5_video_id]', __t('upload_video'), null) !!}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="video-poster-upload-wrap text-center">
+                                                <i class="la la-image text-muted"></i>
+                                                <h5>{{__t('video_poster')}}</h5>
+                                                <small class="text-muted mb-3 d-block">Size: 700x430 pixels. Supports: jpg,jpeg, or png</small>
+
+                                                {!! image_upload_form('video[html5_video_poster_id]') !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="video-source-item video_source_wrap_external_url" style="display: {{$videoSrc == 'external_url'? 'block' : 'none'}};">
+                                    <input type="text" name="video[source_external_url]" class="form-control" value="" placeholder="External Video URL">
+                                </div>
+                                <div class="video-source-item video_source_wrap_youtube" style="display: {{$videoSrc == 'youtube'? 'block' : 'none'}};">
+                                    <input type="text" name="video[source_youtube]" class="form-control" value="" placeholder="YouTube Video URL">
+                                </div>
+                                <div class="video-source-item video_source_wrap_vimeo" style="display: {{$videoSrc == 'vimeo'? 'block' : 'none'}};">
+                                    <input type="text" name="video[source_vimeo]" class="form-control" value="" placeholder="Vimeo Video URL">
+                                </div>
+                                <div class="video-source-item video_source_wrap_embedded" style="display: {{$videoSrc == 'embedded'? 'block' : 'none'}};">
+                                    <textarea name="video[source_embedded]" class="form-control" placeholder="Place your embedded code here"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <!-- <div class="form-group {{ $errors->has('topic_id') ? ' has-error' : '' }}">
                             <label class="mb-3">{{__t('topic')}}</label>
@@ -91,74 +147,20 @@
 
                     </div>
 
-                </div>
 
-
-                <div class="lecture-video-upload-wrap mb-5">
-                    @php
-                        $videoSrc = old('video_source')
-                    @endphp
-
-                    <label>{{__t('intro_video')}}</label>
-
-                    <select name="video[source]" class="lecture_video_source form-control mb-2">
-                        <option value="-1">Select Video Source</option>
-                        <option value="html5" {{selected($videoSrc, 'html5')}} >HTML5 (mp4)</option>
-                        <option value="external_url" {{selected($videoSrc, 'external_url')}}>External URL</option>
-                        <option value="youtube" {{selected($videoSrc, 'youtube')}}>YouTube</option>
-                        <option value="vimeo" {{selected($videoSrc, 'vimeo')}}>Vimeo</option>
-                        <option value="embedded" {{selected($videoSrc, 'embedded')}}>Embedded</option>
-                    </select>
-
-                    <p class="video-file-type-desc">
-                        <small class="text-muted">Select your preferred video type. (.mp4, YouTube, Vimeo etc.) </small>
-                    </p>
-
-                    <div class="video-source-input-wrap mb-5" style="display: {{$videoSrc? 'block' : 'none'}};">
-
-                        <div class="video-source-item video_source_wrap_html5 border bg-white p-4" style="display: {{$videoSrc == 'html5'? 'block' : 'none'}};">
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="video-upload-wrap text-center">
-                                        <i class="la la-cloud-upload text-muted"></i>
-                                        <h5>{{__t('upload_video')}}</h5>
-                                        <p class="mb-2">File Format:  .mp4</p>
-                                        {!! media_upload_form('video[html5_video_id]', __t('upload_video'), null) !!}
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="video-poster-upload-wrap text-center">
-                                        <i class="la la-image text-muted"></i>
-                                        <h5>{{__t('video_poster')}}</h5>
-                                        <small class="text-muted mb-3 d-block">Size: 700x430 pixels. Supports: jpg,jpeg, or png</small>
-
-                                        {!! image_upload_form('video[html5_video_poster_id]') !!}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="video-source-item video_source_wrap_external_url" style="display: {{$videoSrc == 'external_url'? 'block' : 'none'}};">
-                            <input type="text" name="video[source_external_url]" class="form-control" value="" placeholder="External Video URL">
-                        </div>
-                        <div class="video-source-item video_source_wrap_youtube" style="display: {{$videoSrc == 'youtube'? 'block' : 'none'}};">
-                            <input type="text" name="video[source_youtube]" class="form-control" value="" placeholder="YouTube Video URL">
-                        </div>
-                        <div class="video-source-item video_source_wrap_vimeo" style="display: {{$videoSrc == 'vimeo'? 'block' : 'none'}};">
-                            <input type="text" name="video[source_vimeo]" class="form-control" value="" placeholder="Vimeo Video URL">
-                        </div>
-                        <div class="video-source-item video_source_wrap_embedded" style="display: {{$videoSrc == 'embedded'? 'block' : 'none'}};">
-                            <textarea name="video[source_embedded]" class="form-control" placeholder="Place your embedded code here"></textarea>
+                    <div class="col">
+                        <div class="form-group ml-3">
+                            <label for="requirements">{{__t('course_thumbnail')}}</label>
+                            {!! image_upload_form('thumbnail_id', null, [750,422]) !!}
+                            <small class="form-text text-muted"> {{__t('course_img_guide')}}</small>
                         </div>
                     </div>
+
                 </div>
 
 
 
-
-                <button type="submit" class="btn btn-warning"> <i class="la la-save"></i> {{__t('create_course')}}</button>
+                <button type="submit" class="btn btn-primary float-right"> <i class="la la-save"></i> {{__t('create_course')}}</button>
             </form>
 
         </div>

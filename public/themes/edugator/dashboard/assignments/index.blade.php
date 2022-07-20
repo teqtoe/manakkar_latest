@@ -4,7 +4,7 @@
 @section('content')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb  bg-white box-shadow">
             <li class="breadcrumb-item"><a href="{{route('courses_has_assignments')}}">{{__t('courses')}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{__t('assignments')}}</li>
             <li class="breadcrumb-item active" aria-current="page">{{__t('assignment_submission')}}</li>
@@ -13,7 +13,7 @@
     </nav>
 
     @if($courses->count())
-        <table class="table table-bordered bg-white">
+        <table class="table purchase-table bg-white">
 
             <tr>
                 <th>{{__t('thumbnail')}}</th>
@@ -25,7 +25,7 @@
             @foreach($courses as $course)
 
                 <tr>
-                    <td><img src="{{$course->thumbnail_url}}" width="80" /></td>
+                    <td><img src="{{$course->thumbnail_url}}" class="thumbnail" /></td>
                     <td>
                         <p class="mb-3">
                             <a href="{{route('course', $course->slug)}}"target="_blank"><strong>{{$course->title}}</strong></a>

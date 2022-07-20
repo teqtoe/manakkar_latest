@@ -26,7 +26,7 @@
                     <div class="select-withdraw-method-name">
                         <input type="radio" class="withdraw-method-input" id="withdraw-method-{{$method_key}}-input" name="withdraw_preference[method]" value="{{$method_key}}" {{checked($method_key, array_get($saved_preference, 'method'))}} style="display: none;">
 
-                        <label for="withdraw-method-{{$method_key}}-input" class="withdraw-preference-method-name py-3 px-4 border mr-3" data-target="withdraw-method-{{$method_key}}-form">
+                        <label for="withdraw-method-{{$method_key}}-input" class="withdraw-preference-method-name border-radius py-3 px-4 border mr-3" data-target="withdraw-method-{{$method_key}}-form">
                             <p class="mb-0">{{array_get($method, 'method_name')}}</p>
                             <p class="text-muted mb-0">
                                 <small>Min withdraw amount: {!! price_format(get_option("withdraw_methods.{$method_key}.min_withdraw_amount")) !!}</small>
@@ -58,7 +58,7 @@
                             <div class="form-row">
 
                                 @foreach($form_fields as $field_key => $field)
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-md-12 mb-3">
                                         <label> {{array_get($field, 'label')}} </label>
 
                                         @if(array_get($field, 'type') === 'text')

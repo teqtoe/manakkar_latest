@@ -8,14 +8,14 @@
 
         <div class="enrolled-courses mb-4">
             <div class="row">
-                <div class="col-lg-3">
-                    <img src="{{$course->thumbnail_url}}" width="300" />
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-3">
+                    <img src="{{$course->thumbnail_url}}"/>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-sm-12 col-md-8 col-lg-8 col-xl-9">
                     <div class="enrolled-courses-content">
                         <p>
                             <strong class="mt-4">{{$course->title}}</strong>
-                                {!! $course->status_html() !!} 
+                          
                                 @php
                                     $lectures_count = $course->lectures->count();
                                     $assignments_count = $course->assignments->count();

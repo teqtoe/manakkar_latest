@@ -24,45 +24,49 @@
             <div class="profile-basic-info p-5">
 
                 <div class="form-row">
-                    <div class="form-group col-md-6 {{ $errors->has('name') ? ' has-error' : '' }}">
+
+
+                    <div class="form-group col-md-2">
+                        <label>{{__t('profile_photo')}}</label>
+                        {!! image_upload_form('photo', $user->photo) !!}
+                    </div>
+                    <div class="form-group col-md-5 {{ $errors->has('name') ? ' has-error' : '' }}">
                         <label>{{__t('name')}}</label>
                         <input type="tel" class="form-control" name="name" value="{{$user->name}}" >
                         @if ($errors->has('name'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('name') }}</strong></span>
                         @endif
+
+                        <label class="mt-4">{{__t('phone')}}</label>
+                        <input type="text" class="form-control" name="phone" value="{{$user->phone}}">
                     </div>
 
-                    <div class="form-group col-md-6 {{ $errors->has('job_title') ? ' has-error' : '' }}">
+                    <div class="form-group col-md-5 {{ $errors->has('job_title') ? ' has-error' : '' }}">
                         <label>{{__t('job_title')}}</label>
                         <input type="text" class="form-control" name="job_title" value="{{$user->job_title}}">
                         @if ($errors->has('job_title'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('job_title') }}</strong></span>
                         @endif
+
+                        <label class="mt-4">{{__t('address')}}</label>
+                        <input type="text" class="form-control" name="address" value="{{$user->address}}" >
                     </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label>{{__t('phone')}}</label>
-                        <input type="text" class="form-control" name="phone" value="{{$user->phone}}">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label>{{__t('address')}}</label>
-                        <input type="text" class="form-control" name="address" value="{{$user->address}}" >
-                    </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-12">
                         <label>{{__t('address_2')}}</label>
                         <input type="text" class="form-control" name="address_2" value="{{$user->address_2}}" >
                     </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label>{{__t('city')}}</label>
                         <input type="text" class="form-control" name="city" value="{{$user->city}}">
                     </div>
 
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-4">
                         <label>{{__t('zip')}}</label>
                         <input type="text" class="form-control" name="zip_code" value="{{$user->zip_code}}">
                     </div>
@@ -78,14 +82,9 @@
                         </select>
                     </div>
 
-                    <div class="form-group col-md-9">
+                    <div class="form-group col-md-12">
                         <label>{{__t('about_me')}}</label>
                         <textarea class="form-control" name="about_me" rows="5">{{$user->about_me}}</textarea>
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label>{{__t('profile_photo')}}</label>
-                        {!! image_upload_form('photo', $user->photo) !!}
                     </div>
 
                 </div>

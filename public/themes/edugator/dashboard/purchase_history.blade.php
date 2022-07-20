@@ -11,7 +11,7 @@
 
         <h2 class="mb-4">My purchases</h2>
 
-        <table class="table purchase-table table purchase-table">
+        <table class="table purchase-table table purchase-table table-responsive-md">
 
             <tr>
                 <th>#</th>

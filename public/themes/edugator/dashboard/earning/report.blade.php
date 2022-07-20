@@ -46,22 +46,22 @@
 
     <div class="row">
         <div class="col-12 col-md-4">
-            <div class="card card-body mb-4">
-                <h6 class="text-muted text-uppercase">Sales</h6>
+            <div class="card card-body dashboard-card mb-4">
+                <h6 class="title">Sales</h6>
                 <h4 class="earning-stats amount">{!! price_format($total_amount) !!}</h4>
             </div>
         </div>
 
         <div class="col-12 col-md-4">
-            <div class="card card-body mb-4">
-                <h6 class="text-muted text-uppercase">Earnings</h6>
+            <div class="card card-body dashboard-card mb-4">
+                <h6 class="title">Earnings</h6>
                 <h4 class="earning-stats amount">{!! price_format($total_earning) !!}</h4>
             </div>
         </div>
 
         <div class="col-12 col-md-4">
-            <div class="card card-body mb-4">
-                <h6 class="text-muted text-uppercase">Commission Deducted</h6>
+            <div class="card card-body dashboard-card mb-4">
+                <h6 class="title">Commission Deducted</h6>
                 <h4 class="earning-stats amount">{!! price_format($commission) !!}</h4>
             </div>
         </div>
@@ -69,7 +69,7 @@
     </div>
 
 
-    <div class="p-4 bg-white">
+    <div class="px-4 py-5 bg-white border-radius box-shadow">
         <canvas id="ChartArea"></canvas>
     </div>
 

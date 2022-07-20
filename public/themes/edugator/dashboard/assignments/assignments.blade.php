@@ -4,7 +4,7 @@
 @section('content')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb bg-white box-shadow">
             <li class="breadcrumb-item"><a href="{{route('courses_has_assignments')}}">{{__t('courses')}}</a></li>
             <li class="breadcrumb-item"><a href="{{route('courses_assignments', $course->id)}}">{{__t('assignments')}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{__t('assignment_submission')}}</li>
@@ -13,7 +13,7 @@
     </nav>
 
     @if($assignments->count())
-        <table class="table table-bordered bg-white table-striped">
+        <table class="table border-radius bg-white border-none">
 
            <thead>
            <tr>
@@ -23,7 +23,7 @@
 
             @foreach($assignments as $assignment)
 
-                <tr>
+                <tr class="bg-white">
                     <td>
                         <p class="mb-3">
                             <strong>

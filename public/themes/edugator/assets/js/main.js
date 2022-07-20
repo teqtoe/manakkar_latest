@@ -1209,5 +1209,26 @@ $(function() {
 
 // _____________________________________________
 
-// Video cookie_notice_popup
+// Sidebar collapse
 // _____________________________________________
+
+
+// if ($(window).width() < 922) {
+//     $('#sidebar').collapse({
+//       toggle: false
+//     });
+//   } else {
+//     $('#sidebar').collapse({
+//       toggle: true
+//     });
+//   }
+
+function openNav() {
+  document.getElementById("user_dashboard_mm").style.width = "250px";
+  // document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("user_dashboard_mm").style.width = "0";
+  // document.getElementById("main").style.marginLeft= "0";
+}

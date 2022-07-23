@@ -42,13 +42,12 @@
     <div class="container py-5">
 
         <div class="row">
-            <div class="col-md-8  order-xs-2"> <!-- offset-md-1 -->
+            <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8  orderr-2"> <!-- offset-md-1 -->
                 <div class="course-details-wrap">
                     <div class="course-intro-stats-wrapper mb-4">
 
 
                     </div>
-
 
 
                     @if($course->description)
@@ -323,7 +322,7 @@
 
 
 
-                <div class="col-md-4 order-xs-1">
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 orderr-1">
 
                     <div class="page-header-right-enroll-box p-3 mt-sm-4 mt-md-0 bg-white shadow">
 

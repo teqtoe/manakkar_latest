@@ -146,7 +146,7 @@ ul{
     color: #fff !important;
 }
 .navbar{
-    padding: 10px 0 !important;
+    /*padding: 10px 0 !important;*/
     background: #ffff;
 }
 .site-main-logo img{
@@ -304,8 +304,8 @@ a#miniCartDropDown:hover, a.profile-dropdown-toogle:hover {
     padding: 5px;
 }
 .profile-dropdown-toogle img{
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
 }
 .profile-dropdown-menu{
@@ -3100,7 +3100,14 @@ input[type=checkbox], input[type=radio]{
 .earning-stats.amount{
     color: #007200
 }
-
+.logout-btn{
+    padding: 15px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.logout-btn i{
+    font-size: 20px;
+}
 
 /*______________________________________________________________________*/
 
@@ -3131,6 +3138,15 @@ input[type=checkbox], input[type=radio]{
 }
 
 @media (max-width: 992px){
+    .orderr-1 {
+        -ms-flex-order: 1;
+        order: 1;
+    }
+
+    .orderr-2 {
+        -ms-flex-order: 2;
+        order: 2;
+    }
     .hero-banner{
         height: auto!important;
     }
@@ -3156,7 +3172,7 @@ input[type=checkbox], input[type=radio]{
     }
     .dashboard-menu-col{
         /*position: inherit;*/
-        display: none;
+        /*display: none;*/
     }
 }
 

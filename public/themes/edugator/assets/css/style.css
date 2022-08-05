@@ -477,7 +477,7 @@ Home popular courses
 }
 .course-card:hover .course-card-img-wrap a:before{
     content: "";
-    background: #3a78ff;
+    /*background: #3a78ff;*/
     height: 100%;
     left: 0;
     opacity: 0.2;
@@ -729,6 +729,11 @@ Home popular courses
 .dashboard-wrap{
     background-color: #f8f8f8;
     position: relative;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+.dashboard-wrap h1, .dashboard-wrap h2, .dashboard-wrap h3, .dashboard-wrap h4, .dashboard-wrap h5, .dashboard-wrap h6{
+    font-family: 'Noto Sans Display', sans-serif;
+    font-weight: 800;
 }
 .dashboard-menu-col{
     position: sticky;
@@ -812,8 +817,8 @@ Home popular courses
     color: #444444;
 }
 .course-edit-nav a i {
-    font-size: 20px;
-    color: #828282;
+    font-size: 30px;
+    color: #0092c6;
 }
 .course-edit-nav a.active i{
     color: #ffffff;
@@ -1135,8 +1140,8 @@ label.add-instructor-result-item:hover, .instructor-search-results input:checked
     cursor: pointer;
 }
 .select-withdraw-method-name input[type=radio]:checked+label {
-    border-color: #c1eec5 !important;
-    background: #e5ffe8;
+    border-color: #17a2b8!important;
+    background: rgb(23 162 184 / 18%);
 }
 
 /** END: Withdraw Preference **/
@@ -1146,6 +1151,15 @@ label.add-instructor-result-item:hover, .instructor-search-results input:checked
     border-radius: 0 !important;
 }
 
+.fav-menu{
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    margin: auto;
+}
 
 /** END: Dashboard **/
 
@@ -3107,6 +3121,10 @@ input[type=checkbox], input[type=radio]{
 }
 .logout-btn i{
     font-size: 20px;
+}
+
+.border-none{
+    border: none!important;
 }
 
 /*______________________________________________________________________*/

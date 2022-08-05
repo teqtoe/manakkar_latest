@@ -17,7 +17,7 @@
     @endphp
 
     @if($quizzes->total())
-        <table class="table table-bordered bg-white table-striped">
+        <table class="table purchase-table table-striped">
             @foreach($quizzes as $quiz)
                 <tr>
                     <td>

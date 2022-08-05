@@ -13,7 +13,7 @@
     </nav>
 
     @if($courses->count())
-        <table class="table table-bordered bg-white">
+        <table class="table purchase-table box-shadow bg-white">
 
             <tr>
                 <th>{{__t('thumbnail')}}</th>

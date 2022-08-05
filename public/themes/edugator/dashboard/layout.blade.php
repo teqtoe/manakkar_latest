@@ -2,65 +2,44 @@
 <div class="dashboard-wrap">
 <div class="wrapper">
    <!-- Navbar -->
-   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+   <nav class="main-header navbar navbar-expand">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
          <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
+            <a class="nav-link pushmenu" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
          </li>
-
-      <!-- Brand Logo -->
-      <a class="navbar-brand site-main-logo" href="{{route('home')}}">
-          @php
-          $logoUrl = media_file_uri(get_option('site_logo'));
-          @endphp
-          @if($logoUrl)
-          <img src="{{media_file_uri(get_option('site_logo'))}}" alt="{{get_option('site_title')}}" />
-          @else
-          <img src="{{asset('assets/images/teqtoe-lms-logo.svg')}}" alt="{{get_option('site_title')}}" />
-          @endif
-      </a>
-         <!-- <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
-            </li> -->
       </ul>
       <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
-         <li class="nav-item mr-5">
-            <strong>
-            <a href="{{ route('logout') }}"
-               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <i class="la la-sign-out"></i> {{__t('logout')}}
-            </a>
-            </strong>
-         </li>
+      <ul class="navbar-nav main-nav-auth-profile-wrap justify-content-end mt-2 mt-lg-0 flex-grow-1">
+        <li class="nav-item main-nav-right-menu nav-item-user-profile">
+                            <a class=" profile-dropdown-toogle" href="javascript:;">
+                                <span class="top-nav-user-name">
+                                    {!! $auth_user->get_photo !!}
+                                </span>
+                            </a>
+                            <div class="profile-dropdown-menu pt-0">
+
+                                <div class="profile-dropdown-userinfo bg-light p-3">
+                                    <p class="m-0">{{ $auth_user->name }}</p>
+                                    <small>{{$auth_user->email}}</small>
+                                </div>
+
+                                @include(theme('dashboard.sidebar-menu'))
+                            </div>
+                        </li>
       </ul>
    </nav>
    <!-- /.navbar -->
    <!-- Main Sidebar Container -->
-   <aside class="main-sidebar sidebar-light-primary elevation-4">
+   <aside class="main-sidebar sidebar-dark-primary elevation-4">
+         <!-- Brand Logo -->
+        <div class="fav-menu">
+          <img src="{{theme_url('favicon.png')}}" alt="{{get_option('site_title')}}" />
+        </div>
       <!-- Sidebar -->
-      <div class="sidebar">
-         <!-- Sidebar user (optional) -->
-         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            @if (Auth::guest())
-            <li class="nav-item mr-2 ml-2">
-               <a class="nav-link btn btn-login-outline login-btn" href="{{route('login')}}"> <i class="fa fa-sign-in"></i> Login / Signup</a>
-            </li>
-            @else
-            <div class="image">
-               {!! $auth_user->get_photo !!}
-            </div>
-            <div class="info">
-               <a href="#" class="d-block">{{ $auth_user->name }}</a>
-            </div>
-            @endif
-         </div>
+      <div class="sidebar mt-3">
          <!-- Sidebar Menu -->
-         <nav class="mt-2">
+         <nav class="">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                <li class="nav-item {{request()->is('dashboard') ? 'active' : ''}}">
                   <a href="{{route('dashboard')}}" class="nav-link">

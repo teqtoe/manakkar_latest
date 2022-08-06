@@ -78,7 +78,7 @@
                 
 
                 <ul class="navbar-nav main-nav-auth-profile-wrap justify-content-end mt-2 mt-lg-0 flex-grow-1">
-
+                    
                     <li class="nav-item nav-categories-item">
                         <a class="nav-link" href="{{route('categories')}}"> <i class="la la-th-large"></i> {{__t('categories')}}  <i class="fa fa-angle-down"></i> </a>
 

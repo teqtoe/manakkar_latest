@@ -1,4 +1,4 @@
-/*!
+!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
@@ -3635,8 +3635,21 @@ input[type="button"].btn-block {
   background-color: transparent;
 }
 
+.dropdown-menu{
+  /*transition: .2s ease-in-out;*/
+}
+
 .dropdown-menu.show {
   display: block;
+  left: 125px!important;
+  padding: 8px 8px;
+  width: 250px;
+  border-radius: 6px;
+}
+
+.dropdown-menu .top-nav-user-name img{
+  width: 70px;
+  border-radius: 50%;
 }
 
 .dropdown-header {
@@ -13149,6 +13162,10 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   max-height: 38px;
 }
 
+.main-sidebar .profile-butn{
+
+}
+
 .main-sidebar {
   height: 100vh;
   overflow-y: hidden;
@@ -13179,8 +13196,8 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 .sidebar {
   /*border-top: 1px solid #efefef;*/
-  height: calc(100% - (3.5rem + 1px));
-  overflow-x: none;
+  height: calc(82% - (3.5rem + 1px));
+  overflow-x: hidden;
   overflow-y: initial;
   padding-bottom: 0;
   padding-left: 0.3rem;
@@ -14778,7 +14795,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   .sidebar-mini.sidebar-collapse .content-wrapper,
   .sidebar-mini.sidebar-collapse .main-footer,
   .sidebar-mini.sidebar-collapse .main-header {
-    margin-left: 150px !important;
+    margin-left: 130px !important;
   }
   .sidebar-mini.sidebar-collapse .nav-sidebar .nav-header {
     display: none;
@@ -52465,4 +52482,4 @@ a.text-muted:hover {
 .dark-mode .dark-mode.accent-gray-dark .page-item .page-link:hover, .dark-mode .dark-mode.accent-gray-dark .page-item .page-link:focus {
   color: #3f474e;
 }
-/*# sourceMappingURL=adminlte.css.map */
+/*# sourceMappingURL=adminlte.css.map 

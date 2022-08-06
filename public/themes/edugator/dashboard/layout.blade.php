@@ -3,30 +3,10 @@
 <div class="wrapper">
    <!-- Navbar -->
    <nav class="main-header navbar navbar-expand">
-      <!-- Left navbar links -->
       <ul class="navbar-nav">
          <li class="nav-item">
             <a class="nav-link pushmenu" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
          </li>
-      </ul>
-      <!-- Right navbar links -->
-      <ul class="navbar-nav main-nav-auth-profile-wrap justify-content-end mt-2 mt-lg-0 flex-grow-1">
-        <li class="nav-item main-nav-right-menu nav-item-user-profile">
-                            <a class=" profile-dropdown-toogle" href="javascript:;">
-                                <span class="top-nav-user-name">
-                                    {!! $auth_user->get_photo !!}
-                                </span>
-                            </a>
-                            <div class="profile-dropdown-menu pt-0">
-
-                                <div class="profile-dropdown-userinfo bg-light p-3">
-                                    <p class="m-0">{{ $auth_user->name }}</p>
-                                    <small>{{$auth_user->email}}</small>
-                                </div>
-
-                                @include(theme('dashboard.sidebar-menu'))
-                            </div>
-                        </li>
       </ul>
    </nav>
    <!-- /.navbar -->
@@ -102,6 +82,37 @@
          <!-- /.sidebar-menu -->
       </div>
       <!-- /.sidebar -->
+
+
+
+      <div class="dropdown profile-butn dropright fxd">
+        <a type="button" id="dropdownMenu2" class=" profile-dropdown-toogle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="top-nav-user-name">
+              {!! $auth_user->get_photo !!}
+            </span>
+        </a>
+        <!--Menu-->
+        <div class="dropdown-menu dropdown-primary" x-placement="right-start">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-4">
+              <span class="top-nav-user-name">
+                {!! $auth_user->get_photo !!}
+              </span>
+            </div>
+            <div class="col-lg-8">
+              <p class="m-0 auth_name">{{ $auth_user->name }}</p>
+              <small>{{$auth_user->email}}</small>
+            </div>
+          </div>
+            <p class="logout-btn">
+              <a href="{{ route('logout') }}"
+                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <i class="la la-sign-out"></i> {{__t('logout')}}
+              </a>
+            </p>
+        </div>
+      </div>
+
    </aside>
    <!-- Content Wrapper. Contains page content -->
    <div class="content-wrapper">

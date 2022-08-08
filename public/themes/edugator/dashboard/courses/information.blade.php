@@ -96,7 +96,7 @@
                             <label class="mb-3">{{__t('category')}}</label>
 
                             @if($categories->count())
-                                <select name="category_id" id="course_category" class="form-control select2">
+                                <select name="category_id" id="course_category" class="form-control">
                                     <option value="">{{__t('select_category')}}</option>
                                     @foreach($categories as $category)
                                         <optgroup label="{{$category->category_name}}">
@@ -116,7 +116,7 @@
                             <label class="mb-3">{{__t('topic')}} <span class="show-loader"></span> </label>
 
                             @if($categories->count())
-                                <select name="topic_id" id="course_topic" class="form-control select2">
+                                <select name="topic_id" id="course_topic" class="form-control">
                                     <option value="">{{__t('select_topic')}}</option>
                                     @foreach($topics as $topic)
                                         <option value="{{$topic->id}}" {{selected($topic->id, $course->category_id)}}>{{$topic->category_name}}</option>

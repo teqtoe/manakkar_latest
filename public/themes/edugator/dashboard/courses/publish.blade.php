@@ -38,7 +38,7 @@
                         <div class="text-center">
                             <div class="alert alert-success py-5">
                                 <p class="course-publish-icon m-0"> <i class="la la-smile-o"></i></p>
-                                <h3>Your course has been published</h3>
+                                <h3 class="text-white">Your course has been published</h3>
                             </div>
 
                             <button type="submit" class="btn btn-warning btn-lg mt-4" name="publish_btn" value="unpublish"><i class="la la-arrow-circle-down"></i> Unpublish Course</button>

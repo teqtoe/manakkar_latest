@@ -3,7 +3,7 @@
 
         <div id="section-item-{{$item->id}}" class="edit-curriculum-item mb-2 edit-curriculum-{{$item->item_type}}">
 
-            <div class="section-item-top border p-3 d-flex bg-white">
+            <div class="section-item-top border-radius border p-3 d-flex bg-white">
                 <div class="section-item-title">
                     {!! $item->icon_html !!}
                     <span class="section-item-title-text">{{$item->title}}</span>

@@ -98,7 +98,7 @@ ul{
     border-color: var(--danger);
 }
 .btn, .form-control{
-    border-radius: 2px;
+    border-radius: 6px;
 }
 .btn-round{
     border-radius: 25px;
@@ -737,7 +737,7 @@ Home popular courses
 }
 .dashboard-wrap h1, .dashboard-wrap h2, .dashboard-wrap h3, .dashboard-wrap h4, .dashboard-wrap h5, .dashboard-wrap h6{
     font-family: 'Noto Sans Display', sans-serif;
-    font-weight: 800;
+    font-weight: 700;
 }
 .dashboard-menu-col{
     position: sticky;
@@ -788,7 +788,7 @@ Home popular courses
     line-height: 1.6;
 }
 .dashboard-card{
-    align-items: center;
+    /*align-items: center;*/
     box-shadow: 0 7px 10px 0 rgb(62 73 84 / 4%);
     border-radius: 0.625rem!important;
     background-color: #fff!important;
@@ -872,6 +872,7 @@ Home popular courses
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 500;
 }
 .ellipsis{
     white-space: nowrap;
@@ -887,6 +888,9 @@ Home popular courses
 }
 .section-item-top:hover .section-item-btn-tool{
     display: block;
+}
+.section-item-btn-tool .la.la-pencil{
+    color: #0092c6;
 }
 .single-attachment-form{
     width: 48%;
@@ -1014,7 +1018,7 @@ label.radio input[type=radio]:checked+span:before {
 * Dashboard Curriculum
  */
 .section-item-form-html{
-    background-color: #f6faff;
+    background-color: #ffffff;
 }
 .curriculum-item-edit-tab a{
     border-radius: 0 !important;
@@ -1042,6 +1046,7 @@ label.switch {
 label.switch span {
     /*position: relative;*/
     display: block;
+    margin-top: 15px;
 }
 label.switch span:before {
     content: "";
@@ -1073,7 +1078,7 @@ label.switch span:after {
     transition: all ease-in-out .3s;
 }
 label.switch input[type=checkbox] {
-    display: none;
+    display: none!important;
 }
 label.switch input[type=checkbox]:checked+span:after {
     left: 17px;
@@ -1479,15 +1484,15 @@ END Media Manager
     flex: 0 0 calc(25% + 60px)
 }
 .reviewed-user-photo{
-    width: 48px;
+    /*width: 48px;*/
     height: 48px;
     line-height: 48px;
     margin-right: 20px;
 }
 .reviewed-user-photo img, .profile-text-photo{
-    width: 75px;
-    height: 75px;
-    line-height: 75px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     border-radius: 50%;
     display: block;
     text-align: center;
@@ -2235,6 +2240,12 @@ User Profile Page
         top: -100px!important;
         left: 0!important;
     }
+    .login-box .card-content{
+        padding: 15px 8px!important;
+    }
+    .login-box .login-left-bg img, .login-left-bg, .login-box{
+        border-radius: 0px!important;
+    }
     .dropdown-menu .auth_name{
         margin-top: 10px!important;
     }
@@ -2506,7 +2517,7 @@ Teqtoe
     box-shadow: 0 7px 10px 0 rgb(62 73 84 / 4%);
 }
 .border-radius{
-     border-radius: 0.625rem!important;   
+    border-radius: 0.625rem!important;
 }
 .border-none{
     border: none!important;
@@ -2777,7 +2788,7 @@ textarea.form-control {
     font-size: 14px;
 }
 .form-control{
-    border: 1px solid #ececec;
+    border: 1px solid #ededed;
     border-radius: 0.5rem;
     box-shadow: none;
     padding: 10px 10px;
@@ -3042,6 +3053,9 @@ input[type=checkbox], input[type=radio]{
     border-radius: 0.625rem!important;
     background-color: #fff!important;
 }
+.dashboard-content .my-review a{
+    font-weight: 700;
+}
 .enrolled-courses img{    
      border-radius: 0.625rem 0 0 0.625rem!important;
      width: 260px;
@@ -3158,6 +3172,7 @@ input[type=checkbox], input[type=radio]{
     border-radius: 6px;
     margin-top: 10px;
     text-align: center;
+    display: grid;
 }
 .dropdown-menu .logout-btn a{
     color: #ffffff;

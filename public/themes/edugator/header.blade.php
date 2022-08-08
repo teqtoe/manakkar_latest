@@ -3,7 +3,7 @@
     $categories = Category::whereStep(0)->with('sub_categories')->orderBy('category_name', 'asc')->get();
 @endphp
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" dir="{{get_option('enable_rtl')? 'rtl' : 'auto'}}" >
 <head>
     <meta charset="utf-8">
@@ -78,7 +78,7 @@
                 
 
                 <ul class="navbar-nav main-nav-auth-profile-wrap justify-content-end mt-2 mt-lg-0 flex-grow-1">
-                    
+
                     <li class="nav-item nav-categories-item">
                         <a class="nav-link" href="{{route('categories')}}"> <i class="la la-th-large"></i> {{__t('categories')}}  <i class="fa fa-angle-down"></i> </a>
 

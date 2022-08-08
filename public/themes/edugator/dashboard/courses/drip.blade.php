@@ -49,7 +49,7 @@
                             @foreach($section->items as $item)
                                 <div class="edit-drip-item mb-2 edit-drip-{{$item->item_type}}">
 
-                                    <div class="section-item-top border p-3 d-flex bg-white">
+                                    <div class="section-item-top border-radius border p-3 d-flex bg-white">
                                         <div class="form-group col-md-6"> {!! $item->icon_html !!} {{$item->title}}</div>
 
                                         <div class="form-group col-md-3">

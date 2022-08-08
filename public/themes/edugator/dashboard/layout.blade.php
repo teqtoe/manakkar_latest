@@ -11,7 +11,7 @@
    </nav>
    <!-- /.navbar -->
    <!-- Main Sidebar Container -->
-   <aside class="main-sidebar sidebar-dark-primary elevation-4">
+   <aside class="main-sidebar sidebar-dark-primary elevation-3">
          <!-- Brand Logo -->
         <div class="fav-menu">
           <img src="{{theme_url('favicon.png')}}" alt="{{get_option('site_title')}}" />

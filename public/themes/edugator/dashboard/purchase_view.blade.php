@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="purchase-ful-view-wrap p-4 bg-white">
+    <div class="purchase-ful-view-wrap border-radius p-4 bg-white">
 
         <h4 class="mb-4">Purchase Details</h4>
 
